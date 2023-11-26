@@ -401,8 +401,8 @@ return (
           {loadedPosts.map((post) => (
             <Card
               border="2px"
-              borderColor="#5E317A"
-              bg="black"
+              borderColor="black"
+              bg="#FEFFFF"
               key={post.permlink}
               maxW="md"
               mb={2}
@@ -422,7 +422,7 @@ return (
                     alignItems="center"
                   >
                     <Box>
-                      <Heading color="#b4d701" size="lg">
+                      <Heading color="black" size="lg">
                         {post.author}
                       </Heading>
                     </Box>
@@ -435,7 +435,7 @@ return (
               <Box padding="10px" height="200px"> 
                 <Image 
                   objectFit="cover"
-                  border="3px solid #d7a917"
+                  border="3px solid black"
                   borderRadius="35px"
                   src={post.thumbnail}
                   alt="Post Thumbnail"
@@ -461,7 +461,8 @@ return (
                   }}
                 >
                   <Text  
-                        color="white" 
+                        color="black" 
+                  
                         paddingLeft="5px"
                         paddingTop="10px"
                         paddingRight="5px"
@@ -484,7 +485,7 @@ return (
                 <Link to={`profile/${post.author}`}>
                       <Avatar
                         name={post.author}
-                        border="2px solid #d7a917"
+                        border="2px solid black"
                         borderRadius="100px"
                         src={`https://images.ecency.com/webp/u/${post.author}/avatar/small`}
                         width="105%"
@@ -501,7 +502,7 @@ return (
                     right="10px"
                     onClick={(e) => {e.stopPropagation(); handleVotersModalOpen(post);}}
                     variant="ghost"
-                    colorScheme="red"
+                    colorScheme="black"
                     size="s"
                     ml={2}
                     style={{
@@ -513,37 +514,32 @@ return (
                       backgroundColor: 'transparent', // Cor de fundo ao passar o mouse
                   }} //dynamically changes font size based on numerical value of post.earnings
                   >
-                   <Text marginBottom={"45px"} color={"#FA2622"} > R$ {(post.earnings*brl).toFixed(2)}</Text>
-                    <img
-                      src="../../../../assets/blood4.gif"
-                      alt="spinning stoken coin"
-                      style={{
-                        width: "30px",
-                        height: "70px",
-                        marginLeft: "10px",
-                        marginRight: "12px",
-                        marginBottom: "-10px",
-                      }}
-                    />
+                   <Text marginBottom={"0px"} color={"teal"} > R$ {(post.earnings*brl).toFixed(2)}</Text>
+                    
+                      
                   </Button>
                 </Tooltip>
                 </Text>
                 
                 <Box marginLeft="auto">
                 <IconButton
-              icon={<MdArrowUpward />}
-              marginBottom= "-5"
-              backgroundColor="black"
-              color="red"
-              variant="ghost"
-              size="xs"
-              borderRadius="50%"
-              aria-label="Upvote"
-              border="1px"
-              borderColor="red"
-              onClick={() => handleVoteClick(post)}
-            />
+                  icon={
+                    <img
+                      src="/assets/somaskate2.ico"
+                      alt="Skate Icon"
+                      style={{ width: '50px', height: '50px',  }}
+                    />
+                  }
+                  marginBottom="-5"
+                  size="xs"
+                  bg= 'transparent'
+                  borderRadius="50%"
+                  aria-label="Upvote"
+                  onClick={() => handleVoteClick(post)}
+
+    />        
                  </Box>
+                 
                  
 
 

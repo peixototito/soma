@@ -22,7 +22,7 @@ export const theme = extendTheme({
   styles: {
     global: (props: GlobalStyleProps) => ({
       body: { 
-        background: "black",
+        background: "#FEFFFF",
         color:  "black" ,
         'font-family': 'Terrorplate, sans-serif',
 
