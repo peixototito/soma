@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet";
 
-const APP_NAME = "Crow's Night App";
+const APP_NAME = "Soma Skate Arte";
 
 const Meta = () => {
   return (

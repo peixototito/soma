@@ -402,7 +402,7 @@ return (
             <Card
               border="2px"
               borderColor="black"
-              bg="#FEFFFF"
+              bg="#FAFAFA"
               key={post.permlink}
               maxW="md"
               mb={2}
@@ -453,10 +453,10 @@ return (
 
                   style={{ //style of the speech bubble
                     backgroundImage: `url('')`,
-                    backgroundSize: '105% 140%', // stretches the speech bubble as big as the div and dynamically changes 
+                    backgroundSize: '60% 60%', // stretches the speech bubble as big as the div and dynamically changes 
                     backgroundPosition: 'center', 
                     backgroundRepeat: 'no-repeat', 
-                    marginBottom: '-40px', // makes the speech bubble extend beyond the div
+                    marginBottom: '-80px', // makes the speech bubble extend beyond the div
                     paddingBottom: '60px', // for some reason it needs this part too?
                   }}
                 >
