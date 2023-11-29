@@ -51,12 +51,12 @@ const defaultThumbnail =
 const placeholderEarnings = 69.42;
 
 const randomSentences = [
-  "Rock'n Roll Bloder!",
-  "Viva satã!",
-  "Vou beber até vomitar sangue.",
-  "Isso é Crow's Night!",
-  "Foda-se o instagram!",
-  "Skateboard, porra!!!",
+  "SOMA!",
+  "Viva o Skate!",
+  "SKATE BOARD.",
+  "FAZ O 13!",
+  "JA ANDOU DE SKATE HOJE",
+  "Arte!!!",
 ];
 
 const PlaceholderLoadingBar = () => {
@@ -67,15 +67,15 @@ const PlaceholderLoadingBar = () => {
 
   return (
     <center onLoad={() => {}}>
-      <Image src="/assets/gifs/crows6.gif" width="250px" />
-      <Text>{randomSentence}</Text>
+      <Image src="/assets/gifs/somaskate.gif" width="250px" />
+      <Text color={"black"}>{randomSentence}</Text>
     </center>
   );
 };
 
 const HiveBlog: React.FC<Types.HiveBlogProps> = ({
   queryType = "created",
-  tag = 'crowsnight666'
+  tag = 'somaskatearte13'
   
 }) => {
   const [loadedPosts, setLoadedPosts] = useState<any[]>([]);
@@ -255,7 +255,7 @@ const [brl, setBrl] = useState(0);
     fetchPosts(); // Fetch more posts when "Load More" is clicked
   };
   useEffect(() => {
-    const audio = new Audio("/assets/audio/crowaudio.mp3");
+    const audio = new Audio("");
   
     const playAudio = () => {
       audio.play();
@@ -337,9 +337,9 @@ const [brl, setBrl] = useState(0);
     onOpen();
   };
   const cardHoverStyles = css`
-  transform: scale(1.01); /* Increase size by 5% */
+  transform: scale(1.01); /* Increase size by 1% */
   transition: transform 0.2s ease-in-out; /* Add a smooth transition effect */
-  box-shadow: 0 0 150px rgba(0, 0, 0, 0.5); /* Add a green box shadow for the glow effect */
+  box-shadow: 0 0 150px rgba(0, 0, 0, 0.1); /* Add a green box shadow for the glow effect */
 `;
 
 const cardStyles = css`

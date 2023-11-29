@@ -11,55 +11,55 @@ interface Card {
 
 const cardData: Card[] = [
   {
-    imageUrl: '../../../../assets/team/baba.png',
-    hoverImageUrl: '../../../../assets/team/baba666g.gif', // Specify hover image URL
-    subtitle: 'Baba de Lex',
-    url: 'https://crowsnight.vercel.app/profile/babaskt'
+    imageUrl: '../../../../assets/leoxvlad.jpeg',
+    hoverImageUrl: '../../../../assets/.gif', // Specify hover image URL
+    subtitle: 'XVLAD',
+    url: 'https://crowsnight.vercel.app/profile/xvlad'
     },
     {
-    imageUrl: '../../../../assets/team/zero.png',
-    hoverImageUrl: '../../../../assets/team/zerog.gif',
-    subtitle: 'Zero',
+    imageUrl: '../../../../assets/arthurcampos.jpg',
+    hoverImageUrl: '../../../../assets/.gif',
+    subtitle: 'ARTHUR CAMPOS',
     },
 
   {
-    imageUrl: '../../../../assets/team/bodao.png',
-    hoverImageUrl: '../../../../assets/team/bodaog.gif',
-    subtitle: 'Matheus Bodão',
+    imageUrl: '../../../../assets/miguelzinho.jpg',
+    hoverImageUrl: '../../../../assets/team/',
+    subtitle: 'Miguelzinho',
   },
   {
-    imageUrl: '../../../../assets/team/emo.png',
+    imageUrl: '../../../../assets/team/',
     hoverImageUrl: '',
-    subtitle: 'Guilherme',
+    subtitle: '',
   },
   {
-    imageUrl: '../../../../assets/team/harleyvladson.png',
-    subtitle: 'Xvlad 666',
+    imageUrl: '../../../../assets/team/',
+    subtitle: '',
     url: 'https://crowsnight.vercel.app/profile/xvlad',
     hoverImageUrl: '../../../../assets/team/vlad_hover.gif',
   },
   {
-    imageUrl: '../../../../assets/team/pharra.png',
+    imageUrl: '../../../../assets/team/',
     subtitle: 'Pharra',
     url: 'https://crowsnight.vercel.app/profile/pharra',
-    hoverImageUrl: '../../../../assets/team/pharrag.gif',
+    hoverImageUrl: '../../../../assets/team/',
   },
   {
-    imageUrl: '../../../../assets/team/defon.jpg',
+    imageUrl: '../../../../assets/team/',
     subtitle: 'Defon',
-    hoverImageUrl: '../../../../assets/team/pedrog.gif',
+    hoverImageUrl: '../../../../assets/team/',
     url: 'https://crowsnight.vercel.app/profile/doblershiva'
   },
   {
-    imageUrl: '../../../../assets/team/bruno.png',
+    imageUrl: '../../../../assets/team/',
     subtitle: 'Bruno Boaz',
-    hoverImageUrl: '../../../../assets/team/brunetg.gif',
+    hoverImageUrl: '../../../../assets/team/',
     url: ''
   },
   { 
-    imageUrl: '../../../../assets/team/meola.jpeg',
+    imageUrl: '../../../../assets/team/',
     subtitle: 'Meola',
-    hoverImageUrl: '../../../../assets/team/meolag.gif',
+    hoverImageUrl: '../../../../assets/team/',
     url: ''
   },
 
@@ -72,7 +72,7 @@ const Equipe: React.FC = () => {
       <>
         <center>
           <Text fontSize={"48px"} color={"#b4d701"}>
-            MONSTROS
+            Equipe
           </Text>
         </center>
   

@@ -25,7 +25,7 @@ const Meta = () => {
       <meta property="twitter:image" content="https://i.ibb.co/3R7cvdZ/image.png"/>
       <meta property="twitter:description" content="The Portal to web3 skateboarding"></meta>
 
-      <link rel="shortcut icon" href="assets\crlogo.ico" />
+      <link rel="shortcut icon" href="assets\somaskate2.ico" />
       <link rel="manifest" href="./manifest.json" />
     </Helmet>
   );

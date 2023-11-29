@@ -17,8 +17,8 @@ import Store from "./store";
           <TabList mb="1em" width="100%">
             <Tab
               fontSize="20px"
-              border="3px black solid"
-              _selected={{ backgroundColor: "#CCCCCC", border:"3px black solid" }} // Change the background color when selected
+              border="2px black solid"
+              _selected={{ backgroundColor: "#CCCCCC", border:"1px black solid" }} // Change the background color when selected
             >
               <VStack><Image src="" alt="" width="40%" height="auto" style={{margin: "-4%"}} /><Text color={"black"}>POST</Text></VStack>
               
@@ -39,25 +39,25 @@ import Store from "./store";
             </Tab> */}
             <Tab
              fontSize="20px"
-             border="3px black solid"
-             _selected={{ backgroundColor: "#CCCCCC", border:"3px #5E317A solid" }} // Change the background color when selected
+             border="2px black solid"
+             _selected={{ backgroundColor: "#CCCCCC", border:"1px #5E317A solid" }} // Change the background color when selected
             >
               <VStack><Image src="" alt="" width="40%" height="auto" style={{margin: "-4%"}} /><Text color={"black"}>UPLOAD</Text></VStack>
             </Tab>
             <Tab
             fontSize="20px"
-            border="3px black solid"
-            _selected={{ backgroundColor: "#CCCCCC", border:"3px #5E317A solid" }} // Change the background color when selected
+            border="2px black solid"
+            _selected={{ backgroundColor: "#CCCCCC", border:"1px #5E317A solid" }} // Change the background color when selected
            >
-             <VStack><Image src="" alt="" width="40%" height="auto" style={{margin: "-4%"}} /><Text color={"black"}>EQUIPE</Text></VStack>
+             <VStack><Image src="" alt="" width="40%" height="auto" style={{margin: "-%"}} /><Text color={"black"}>TIME</Text></VStack>
             </Tab>
             
             <Tab
             fontSize="20px"
-            border="3px black solid"
-            _selected={{ backgroundColor: "#CCCCCC", border:"3px #5E317A solid" }} // Change the background color when selected
+            border="2px black solid"
+            _selected={{ backgroundColor: "#CCCCCC", border:"1px #5E317A solid" }} // Change the background color when selected
            >
-             <VStack><Image src="" alt="" width="40%" height="auto" style={{margin: "-4%"}} /><Text color={"black"}>LOJA</Text></VStack>
+             <VStack><Image src="" alt="" width="40%" height="auto" style={{margin: "-4%"}} /><Text color={"black"}>SKATE SHOP</Text></VStack>
             </Tab>
 
           </TabList>

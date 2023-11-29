@@ -75,7 +75,7 @@ const NewUpload: React.FC = () => {
   const { user } = useAuthUser() as { user: User | null };
   const avatarUrl = `https://images.ecency.com/webp/u/${user?.name}/avatar/small`;
   const [tagsInput, setTagsInput] = useState<string>(""); // State for tags input
-  const [tags, setTags] = useState<string[]>(["crowsnight666"]); // State to store tags
+  const [tags, setTags] = useState<string[]>(["somaskatearte13"]); // State to store tags
   const [includeFooter, setIncludeFooter] = useState<boolean>(false); // New state for the checkbox
   const [showAdvancedOptions, setShowAdvancedOptions] = useState(false);
   const [postLink , setPostLink] = useState<string>("");  
@@ -368,7 +368,7 @@ if (includeFooter) {
           >
             {tag}
           </Badge>
-{tag !== "crowsnight666" && (
+{tag !== "somaskatearte13" && (
           <CloseButton
             size="xs"
             color="red.500"
@@ -380,7 +380,7 @@ if (includeFooter) {
             className="badge-close-button" // Add a class name for easier targeting
             onClick={() => {
               // Check if the tag is not "crowsnight666" before removing it
-              if (tag !== "crowsnight666") {
+              if (tag !== "somaskatearte13") {
               const newTags = [...tags];
               newTags.splice(index, 1);
               setTags(newTags);

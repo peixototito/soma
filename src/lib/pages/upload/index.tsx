@@ -20,7 +20,7 @@ const UploadPage = () => {
         <NewUpload /> // Render NewUpload component when the user is logged in
       ) : (
         <center>
-          <img src="/assets/gifs/crows1.gif" />
+          <img src="/assets/gifs/somaskate.gif" />
           <p>User not logged in. Please log in to upload content.</p>  
         </center>
       )}

@@ -197,7 +197,7 @@ const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
       transform: scale(0.9);
     }
     100% {
-      transform: scale(0.3);
+      transform: scale(0.8);
     }
   `;
   const moveUpAndDown = keyframes`
@@ -220,7 +220,7 @@ const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
       justifyContent="space-between"
       p={6}
       bg=""
-      border="3px solid black"
+      border="1px solid black"
       position="relative"
       borderRadius="10px"
     >
@@ -241,7 +241,7 @@ const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
           }}
         >
           <Image
-            src= '/assets/somaskate2.ico'
+            src= '/assets/somalogo.ico'
             alt="Dropdown Image"
             boxSize="50px" // Adjust the size as needed
             borderRadius="10px"
@@ -307,7 +307,7 @@ const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
       <ChakraLink as={RouterLink} to="/wallet">
       <Button
         backgroundColor="white"
-        border="black 5px solid"
+        border="black px solid"
         color="orange"
 
         
@@ -331,16 +331,16 @@ const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         size={tabSize}
         mb={6}
         css={{
-          border: "5px solid black",
+          border: "1px solid black",
           borderRadius: "5px",
           overflow: "hidden",
         }}
       >
         <TabList display="flex" alignItems="center">
-          <LinkTab to="/" color="black" _selected={{ backgroundColor: "#CCCCCC", border:"3px black solid" }}>Home</LinkTab>
-          <LinkTab to="/QFS" color="black" _selected={{ backgroundColor: "#CCCCCC", border:"3px black solid" }} >Play</LinkTab>
+          <LinkTab to="/" color="black" _selected={{ backgroundColor: "#CCCCCC", border:"1px black solid" }}>Home</LinkTab>
+          <LinkTab to="/QFS" color="black" _selected={{ backgroundColor: "#CCCCCC", border:"1px black solid" }} >Play</LinkTab>
 
-          {loggedIn && <LinkTab to="/wallet" color="white" _selected={{ backgroundColor: "#CCCCCC", border:"3px #5E317A solid" }}>Wallet</LinkTab>} {/* Conditionally render Wallet tab */}
+          {loggedIn && <LinkTab to="/wallet" color="white" _selected={{ backgroundColor: "#CCCCCC", border:"1px #5E317A solid" }}>Wallet</LinkTab>} {/* Conditionally render Wallet tab */}
           {loggedIn ? (
             <div style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
               <Avatar 
@@ -369,7 +369,7 @@ const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
               </Select>
             </div>
           ) : (
-            <Tab onClick={() => setModalOpen(true)} color={"black"} _selected={{ backgroundColor: "#CCCCCC", border:"3px black solid" }} >
+            <Tab onClick={() => setModalOpen(true)} color={"black"} _selected={{ backgroundColor: "#CCCCCC", border:"1px black solid" }} >
               Log in 
             </Tab>
             
