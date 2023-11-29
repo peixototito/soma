@@ -13,79 +13,79 @@ interface Card {
 
 const cardData: Card[] = [
   {
-    imageUrl: '/assets/meias/gota.png',
+    imageUrl: '/assets/loja/bermudaazul.jpg',
     hoverImageUrl: '', // Specify hover image URL
-    subtitle: 'Gota de Sangue',
+    subtitle: 'Bermuda Azul',
     url: '',
-    price: 'Valor: 60,00'
+    price: 'Valor: 149,90'
     },
     {
-    imageUrl: '/assets/meias/listradabranca.png',
-    subtitle: 'Listrada Branca',
-    price: 'Valor: 60,00'
+    imageUrl: '/assets/loja/shapeazul.jpg',
+    subtitle: 'Shape Marfim Azul',
+    price: 'Valor: 189,90'
     },
 
   {
-    imageUrl: '/assets/meias/listradesanguebranco.png',
-    subtitle: 'Listra de Sangue B',
-    price: 'Valor: 60,00'
+    imageUrl: '/assets/loja/shape.jpg',
+    subtitle: 'Shape Selvagem',
+    price: 'Valor: 349,90'
   },
   {
-    imageUrl: '/assets/meias/listradesanguepreto.png',
-    subtitle: 'Listra de Sangue P',
-    price: 'Valor: 60,00'
+    imageUrl: '/assets/loja/marrom.jpg',
+    subtitle: ' Camiseta SoMa Marrom ',
+    price: 'Valor: 99,90'
   },
   {
-    imageUrl: '/assets/meias/listraroxa.png',
-    subtitle: 'Listra Roxa',
+    imageUrl: '/assets/loja/cruiser.jpg',
+    subtitle: 'SoMa ShApE Cruizer',
     hoverImageUrl: '',
-    price: 'Valor: 60,00'
+    price: 'Valor: 249,90'
   },
   {
-    imageUrl: '/assets/meias/olhospregados.png',
-    subtitle: 'Olhos Pregados',
+    imageUrl: '/assets/loja/bermudaamarela.jpg',
+    subtitle: 'SoMa Bermuda AmarelA',
     url: '',
     hoverImageUrl: '',
-    price: 'Valor: 60,00'
+    price: 'Valor: 149,90'
   },
   {
-    imageUrl: '/assets/meias/pdsb.png',
-    subtitle: 'Pé de Esqueleto B',
-    price: 'Valor: 60,00'
+    imageUrl: '/assets/loja/marinho.jpg',
+    subtitle: 'SomA Camiseta Marinho',
+    price: 'Valor: 99,90'
   },
   {
-    imageUrl: '/assets/meias/pdsp.png',
-    subtitle: 'Pé de Esqueleto P',
+    imageUrl: '/assets/loja/verde.jpg',
+    subtitle: 'SoMa Teleferico Verde',
     url: '',
-    price: 'Valor: 60,00'
+    price: 'Valor: 99,90'
     
   },
   {
-    imageUrl: '/assets/meias/skate.png',
-    subtitle: 'Skate Skate',
+    imageUrl: '/assets/loja/telefericopreto.jpg',
+    subtitle: 'SoMa Camiseta Teleferico Preta',
     url: '',
-    price: 'Valor: 60,00'
+    price: 'Valor: 99,90'
     
   },
   {
-    imageUrl: '/assets/meias/tda.png',
-    subtitle: 'Teia de Aranha',
+    imageUrl: '/assets/loja/somaclassic.jpg',
+    subtitle: 'Shape SoMa classic Marfim',
     url: '',
-    price: 'Valor: 60,00'
+    price: 'Valor: 189,90'
     
   },
   {
-    imageUrl: '/assets/meias/velalada.png',
-    subtitle: 'Vela Alada',
+    imageUrl: '/assets/loja/shouldersoma.jpg',
+    subtitle: 'Shoulder Bag SoMa Vermelha',
     url: '',
-    price: 'Valor: 60,00'
+    price: 'Valor: 99,90'
     
   },
   {
-    imageUrl: '/assets/meias/vermes.png',
-    subtitle: 'Vermes Malditos',
+    imageUrl: '/assets/loja/casacosoma.jpg',
+    subtitle: 'Moletom SoMa',
     url: '',
-    price: 'Valor: 60,00'
+    price: 'Valor: 99,90'
     
   },
 
@@ -129,10 +129,10 @@ const [email, setEmail] = useState("");
               key={index}
               borderWidth="3px"
               borderRadius="lg"
-              borderColor={"#5E317A"}
+              borderColor={"black"}
               overflow="hidden"
               style={{ filter: 'initial' }}
-              bg='black'
+              bg='white'
             >
               <RouterLink to={card.url || '/'}>
                 <div
@@ -161,7 +161,7 @@ const [email, setEmail] = useState("");
                   />
                   <Image
                     boxSize={10}
-                    src='/assets/crlogo.ico'
+                    src='/assets/somalogo.ico'
                     style={{
                       position: 'absolute',
                       bottom: '10px',
@@ -178,7 +178,7 @@ const [email, setEmail] = useState("");
                     <Flex alignItems="center">
                     <Image
                         boxSize={10}
-                        src='/assets/crlogo.ico'
+                        src='/assets/somalogo.ico'
                     />
                     <ChakraLink
                         as={RouterLink}
@@ -186,12 +186,12 @@ const [email, setEmail] = useState("");
                         fontSize="sm"
                         fontWeight="bold"
                         marginLeft={'8px'}
-                        color={'white'}
+                        color={'black'}
                     >
                         {card.subtitle}
                     </ChakraLink>
                     </Flex>
-                    {card.price && <Text fontSize="md" color="white">{card.price}</Text>}
+                    {card.price && <Text fontSize="md" color="black">{card.price}</Text>}
                     <Button onClick={() => handleBuy(index)}>Comprar</Button>
                 </center>
                 </VStack>

@@ -51,11 +51,11 @@ const defaultThumbnail =
 const placeholderEarnings = 69.42;
 
 const randomSentences = [
-  "SOMA!",
+  "SOMA OU SUMA!",
   "Viva o Skate!",
   "SKATE BOARD.",
   "FAZ O 13!",
-  "JA ANDOU DE SKATE HOJE",
+  "JA ANDOU DE SKATE HOJE?",
   "Arte!!!",
 ];
 

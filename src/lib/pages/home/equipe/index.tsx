@@ -12,57 +12,28 @@ interface Card {
 const cardData: Card[] = [
   {
     imageUrl: '../../../../assets/leoxvlad.jpeg',
-    hoverImageUrl: '../../../../assets/.gif', // Specify hover image URL
+    hoverImageUrl: '', // Specify hover image URL
     subtitle: 'XVLAD',
     url: 'https://crowsnight.vercel.app/profile/xvlad'
     },
     {
     imageUrl: '../../../../assets/arthurcampos.jpg',
-    hoverImageUrl: '../../../../assets/.gif',
+    hoverImageUrl: '',
     subtitle: 'ARTHUR CAMPOS',
     },
 
   {
     imageUrl: '../../../../assets/miguelzinho.jpg',
-    hoverImageUrl: '../../../../assets/team/',
+    hoverImageUrl: '',
     subtitle: 'Miguelzinho',
   },
   {
-    imageUrl: '../../../../assets/team/',
+    imageUrl: '../../../../assets/pujol.jpg',
     hoverImageUrl: '',
-    subtitle: '',
+    subtitle: 'PUJOLEDUARDO',
   },
-  {
-    imageUrl: '../../../../assets/team/',
-    subtitle: '',
-    url: 'https://crowsnight.vercel.app/profile/xvlad',
-    hoverImageUrl: '../../../../assets/team/vlad_hover.gif',
-  },
-  {
-    imageUrl: '../../../../assets/team/',
-    subtitle: 'Pharra',
-    url: 'https://crowsnight.vercel.app/profile/pharra',
-    hoverImageUrl: '../../../../assets/team/',
-  },
-  {
-    imageUrl: '../../../../assets/team/',
-    subtitle: 'Defon',
-    hoverImageUrl: '../../../../assets/team/',
-    url: 'https://crowsnight.vercel.app/profile/doblershiva'
-  },
-  {
-    imageUrl: '../../../../assets/team/',
-    subtitle: 'Bruno Boaz',
-    hoverImageUrl: '../../../../assets/team/',
-    url: ''
-  },
-  { 
-    imageUrl: '../../../../assets/team/',
-    subtitle: 'Meola',
-    hoverImageUrl: '../../../../assets/team/',
-    url: ''
-  },
-
+ 
+ 
 ];
 
 const Equipe: React.FC = () => {
@@ -71,7 +42,7 @@ const Equipe: React.FC = () => {
     return (
       <>
         <center>
-          <Text fontSize={"48px"} color={"#b4d701"}>
+          <Text fontSize={"48px"} color={"black"}>
             Equipe
           </Text>
         </center>
