@@ -46,10 +46,10 @@ const HiveLogin: React.FC<HiveLoginProps> = ({ isOpen, onClose}) => {
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />
-      <ModalContent as="form" onSubmit={handleSubmit} backgroundColor="black" border="1px solid #5E317A">
-        <ModalHeader color="#5E317A"><div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>𐕣 𖤐 𐕣 <p style={{ margin: '10px' }}>Faça seu pacto </p> 𐕣 𖤐 𐕣</div></ModalHeader>
-        <Image border="1px solid #5E317A" margin="20px" borderRadius="10px" src="assets/michael-myers-halloween.gif" alt="SkateHive" />
-        <ModalCloseButton color="#5E317A"/>
+      <ModalContent as="form" onSubmit={handleSubmit} backgroundColor="#D5E2FD" border="1px solid #5E317A">
+        <ModalHeader color="#5E317A"><div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}> <p style={{ margin: '10px' }}>SoMa ou SuMa </p> </div></ModalHeader>
+        <Image border="1px solid red" margin="20px" borderRadius="10px" src="assets/loading.gif" alt="SkateHive" />
+        <ModalCloseButton color="black"/>
         <ModalBody>
           {user && user.name ? (
             <p>Welcome, {user.name}!</p>
@@ -58,10 +58,10 @@ const HiveLogin: React.FC<HiveLoginProps> = ({ isOpen, onClose}) => {
               <Input
                 type="text"
                 name="username"
-                color="white"
+                color="black"
                 placeholder="Username"
-                backgroundColor="black"
-                border="3px solid #5E317A"
+                backgroundColor="white"
+                border="1px solid red"
                 value={username}
                 onChange={handleInputChange}
                 required
@@ -69,14 +69,14 @@ const HiveLogin: React.FC<HiveLoginProps> = ({ isOpen, onClose}) => {
               <Flex paddingTop="20px" justifyContent={"center"}>
 
               <Button
-  border="1px solid #65418C"
+  border="1px solid red"
   type="submit"
-  backgroundColor="#65418C"
+  backgroundColor="white"
   style={{ transition: "background-color 0.3s" }}
   onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "#E0001B"}
   onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "#65418C"}
 >
-  Assinar Pacto
+  Entrar
 </Button>
 
 

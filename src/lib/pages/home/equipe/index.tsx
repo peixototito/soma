@@ -14,7 +14,7 @@ const cardData: Card[] = [
     imageUrl: '../../../../assets/leoxvlad.jpeg',
     hoverImageUrl: '', // Specify hover image URL
     subtitle: 'XVLAD',
-    url: 'https://crowsnight.vercel.app/profile/xvlad'
+    url: ''
     },
     {
     imageUrl: '../../../../assets/arthurcampos.jpg',
@@ -86,27 +86,13 @@ const Equipe: React.FC = () => {
                     src={hoveredIndex === index ? card.hoverImageUrl || card.imageUrl : card.imageUrl}
                     alt={`Image ${index + 1}`}
                   />
-                  <Image
-                    boxSize={10}
-                    src='https://i.pinimg.com/originals/00/10/0a/00100af8e857761d150425dbc8213d69.gif'
-                    style={{
-                      position: 'absolute',
-                      bottom: '10px',
-                      right: '10px',
-                      transform: 'scale(0)',
-                      transition: 'transform 0.3s ease-in-out',
-                    }}
-                  />
+
                 </div>
               </RouterLink>
   
               <VStack spacing={2} align="center" p={4}>
                 <center>
                   <Flex alignItems="center">
-                    <Image
-                      boxSize={10}
-                      src='https://i.pinimg.com/originals/00/10/0a/00100af8e857761d150425dbc8213d69.gif'
-                    />
                     <ChakraLink
                       as={RouterLink}
                       to={card.url || '/'}

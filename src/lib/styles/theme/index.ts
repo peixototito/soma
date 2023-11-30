@@ -17,8 +17,6 @@ export const theme = extendTheme({
   },
   
 
-  components: {},
-
   styles: {
     global: (props: GlobalStyleProps) => ({
       body: { 
