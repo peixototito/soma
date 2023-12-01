@@ -296,7 +296,7 @@ if (includeFooter) {
             body: finalMarkdown, // Use the complete post body here
             json_metadata: JSON.stringify({
               tags: tags, // Pass the 'tags' array here
-              app: 'CrowsNight',
+              app: 'SomaSkateArte',
               image: thumbnailUrl ? [thumbnailUrl] : [], // Replace 'thumbnailIpfsURL' with 'thumbnailUrl'
             }),
           },
@@ -379,7 +379,7 @@ if (includeFooter) {
             transition="opacity 0.2s ease-in-out" // Add a smooth transition effect
             className="badge-close-button" // Add a class name for easier targeting
             onClick={() => {
-              // Check if the tag is not "crowsnight666" before removing it
+              // Check if the tag is not "somaskatearte13" before removing it
               if (tag !== "somaskatearte13") {
               const newTags = [...tags];
               newTags.splice(index, 1);
@@ -413,7 +413,7 @@ const handleIncludeFooterChange = () => {
     setPostLink(link);
     console.log(postLink)
   }
-  let newFooter = defaultFooter +  "\n" + "> **Veja este post em:** " + `[<a href="https://crowsnight.vercel.app/">Crow's Night App</a>](${postLink})`
+  let newFooter = defaultFooter +  "\n" + "> **Veja este post em:** " + `[<a href="https://soma-ten.vercel.app/">Soma Skate Arte</a>](${postLink})`
   setIncludeFooter((prevIncludeFooter) => !prevIncludeFooter);
   if (includeFooter) {
     // If the toggle is turned off, remove the default footer from Markdown text
@@ -483,7 +483,7 @@ const handleIncludeFooterChange = () => {
         <Box>
           <center>
                         <Badge color="black" bg={"white"} marginTop={"15px"}>
-              se este for o seu primeiro post na crowsnightapp, por favor veja nosso{" "}
+              se este for o seu primeiro post na Soma Skate Arte, por favor veja nosso{" "}
               <a
                 href="https://docs.skatehive.app/docs/tutorial-basics/share-ur-content"
                 style={{ color: 'red' }}

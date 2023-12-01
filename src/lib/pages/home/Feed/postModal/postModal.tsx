@@ -111,7 +111,7 @@ const PostModal: React.FC<Types.PostModalProps> = ({
                       "title": title,
                       "body": editedContent,
                       "json_metadata": JSON.stringify({
-                          app: "CrowsNight",
+                          app: "Soma Skate Arte",
                       })
                   }
               ],

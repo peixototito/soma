@@ -28,7 +28,7 @@ import Store from "./store";
               border="2px black solid"
               _selected={{ backgroundColor: "#65418C",color:"white", fontWeight:"bold", border:"1px solid white" }} // Change the background color when selected
             >
-              <Image src="assets\gifs\crows1.gif" alt="" width="20%" height="auto"/>VIDEOS
+              <Image src="assets\somaskate.gif" alt="" width="20%" height="auto"/>VIDEOS
             </Tab> */}
             {/* <Tab
               color="white"

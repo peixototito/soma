@@ -94,13 +94,13 @@ const BuyModal: React.FC<SendHiveModalProps> = ({
   return (
     <Modal isOpen={showModal} onClose={() => setShowModal(false)} size="md">
       <ModalOverlay opacity={0.2}/>
-      <ModalContent bg="linear-gradient(to top, #0D0D0D, #060126, #3D278C)" border="1px solid white">
+      <ModalContent bg="linear-gradient(to top, , gray, gray)" border="1px solid white">
         <ModalHeader color="white">Enviar Hive</ModalHeader>
         <ModalCloseButton />
         <ModalBody>
           <Box border="1px solid white" padding="10px">
             <Input
-              placeholder="crowsnight"
+              placeholder="SOMA"
               value={toAddress}
               onChange={(e) => setToAddress(e.target.value)}
               color={'white'}
@@ -129,10 +129,10 @@ const BuyModal: React.FC<SendHiveModalProps> = ({
           </Box>
         </ModalBody>
         <ModalFooter>
-          <Button colorScheme="purple" mr={3} onClick={handleTransfer}>
+          <Button colorScheme="gray" mr={3} onClick={handleTransfer}>
             Enviar
           </Button>
-          <Button colorScheme="purple" onClick={() => setShowModal(false)}>
+          <Button colorScheme="gray" onClick={() => setShowModal(false)}>
             Fechar
           </Button>
         </ModalFooter>

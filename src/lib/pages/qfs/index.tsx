@@ -268,7 +268,7 @@ export default function QFS() {
           paddingRight={ 2 }
         >
           <Image
-            src="assets/clockspin.gif"
+            src="assets/skatebit.gif"
             width="28px"
             height="28px"
           />

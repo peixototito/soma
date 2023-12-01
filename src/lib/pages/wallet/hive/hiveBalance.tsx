@@ -216,7 +216,7 @@ export default function HiveBalanceDisplay2() {
               border="2px solid limegreen"
               boxSize="80px"
             />
-            <Text fontSize="32px" padding="10px" color="white">
+            <Text fontSize="32px" padding="10px" color="limegreen">
               {user.name}
             </Text>
           </>
@@ -240,7 +240,7 @@ export default function HiveBalanceDisplay2() {
             ) : (
                 <>
                     <Flex alignItems="center" justifyContent="center">
-                        <Text fontWeight="bold" color="orange">Wallet Worth: ${totalWorth.toFixed(2)}</Text>
+                        <Text fontWeight="bold" color="limegreen">Wallet Worth: ${totalWorth.toFixed(2)}</Text>
                     </Flex>
                     <Divider backgroundColor="red" />
                     <HStack spacing={4} align="stretch">
@@ -379,7 +379,7 @@ return (
   {labelTooltip ? (
     <Tooltip label={labelTooltip} bg="black" color="white" borderRadius="10px" border="1px dashed limegreen">
       {labelLink ? (
-        <ChakraLink color="white" fontWeight="bold"  href={labelLink} isExternal style={labelStyle}>
+        <ChakraLink color="black" fontWeight="bold"  href={labelLink} isExternal style={labelStyle}>
           {label}
         </ChakraLink>
       ) : (

@@ -3,10 +3,10 @@ import React from 'react';
 export const defaultFooter : string= `
 ---
 
-<center>Siga a Crowsnight nas redes sociais</center>
+<center>Siga a Soma Skate Arte nas redes sociais</center>
 
 
-|[facebook](https://www.facebook.com/CrowsNightSkateboard/)|[instagram](https://www.instagram.com/crows_night_skateboard/)|
+|[facebook](https://www.facebook.com/somaskatearte/)|[instagram](https:/www.instagram.com/somaskatearte/)|
 |-|-|
 
 ![](https://i.ibb.co/d60DSFq/crn3.jpg)

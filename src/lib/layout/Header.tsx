@@ -306,7 +306,7 @@ const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
       <Box>
       <ChakraLink as={RouterLink} to="/wallet">
       <Button
-        backgroundColor="white"
+        backgroundColor=""
         border="black px solid"
         color="orange"
 
@@ -340,7 +340,7 @@ const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
           <LinkTab to="/" color="black" _selected={{ backgroundColor: "#CCCCCC", border:"1px black solid" }}>Home</LinkTab>
           <LinkTab to="/QFS" color="black" _selected={{ backgroundColor: "#CCCCCC", border:"1px black solid" }} >Play</LinkTab>
 
-          {loggedIn && <LinkTab to="/wallet" color="white" _selected={{ backgroundColor: "#CCCCCC", border:"1px #5E317A solid" }}>Wallet</LinkTab>} {/* Conditionally render Wallet tab */}
+          {loggedIn && <LinkTab to="/wallet" color="black" _selected={{ backgroundColor: "#CCCCCC", border:"1px  solid" }}>Wallet</LinkTab>} {/* Conditionally render Wallet tab */}
           {loggedIn ? (
             <div style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
               <Avatar 
@@ -369,7 +369,7 @@ const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
               </Select>
             </div>
           ) : (
-            <Tab onClick={() => setModalOpen(true)} color={"black"} _selected={{ backgroundColor: "#CCCCCC", border:"1px black solid" }} >
+            <Tab onClick={() => setModalOpen(true)} color={"black"} _selected={{ backgroundColor: "", border:"1px black solid" }} >
               Log in 
             </Tab>
             
