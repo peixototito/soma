@@ -109,7 +109,7 @@ const AccSummary: React.FC<AccSummaryProps> = ({ username }) => {
                           borderRadius="12px"
                           fontWeight="700"
                           fontSize="18px"
-                          color="white"
+                          color="black"
                           padding="10px"
                       >
                         Shared Rewards
@@ -119,7 +119,7 @@ const AccSummary: React.FC<AccSummaryProps> = ({ username }) => {
                 <Divider backgroundColor="red" />
 
                 <Flex alignItems="center" justifyContent="center">
-                    <Text fontWeight="bold" color="orange">Total Value Generated: { !isLoading ? "$" + (voteRewards + (currationRewards * conversionRate)).toFixed(3) : "Loading..." }</Text>
+                    <Text fontWeight="bold" color="black">Total Value Generated: { !isLoading ? "$" + (voteRewards + (currationRewards * conversionRate)).toFixed(3) : "Loading..." }</Text>
                 </Flex>
                 <Divider backgroundColor="red" />
                 <HStack spacing={4} align="stretch">
@@ -153,7 +153,7 @@ const AccSummary: React.FC<AccSummaryProps> = ({ username }) => {
                     justifyContent="center"
                     padding="10px"
                 >
-                    <Text color="white" fontSize="16px">
+                    <Text color="black" fontSize="16px">
                       These stats are only from the account @{username} and do not include the vote trail that have been set up to support the skatehive community which increases the value of total rewards given out.
                     </Text>
                 </HStack>
