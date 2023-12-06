@@ -87,7 +87,7 @@ const EvmSendModal: React.FC<EvmSendModalProps> = ({ isOpen, onClose, tokenInfo 
   return (
     <Modal isOpen={isOpen} onClose={onClose} size="xl">
       <ModalOverlay />
-      <ModalContent border="1px solid limegreen" backgroundColor="black" color="white">
+      <ModalContent border="1px solid black" backgroundColor="black" color="white">
         <ModalHeader>
           <Grid templateColumns="1fr auto" gap={4} alignItems="center">
             <Flex align="center">

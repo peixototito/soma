@@ -199,7 +199,7 @@ if (userPortifolio && userPortifolio.data) {
         </Flex>
       ) : loading ? (
         <Flex flexDirection="column" alignItems="center" justifyContent="center">
-          <Spinner size="xl" color="limegreen" />
+          <Spinner size="xl" color="black" />
           <Text mt={4}>Loading balances... So many tokens uaau !</Text>
         </Flex>
       ) : (
@@ -209,7 +209,7 @@ if (userPortifolio && userPortifolio.data) {
     textAlign="center"
     fontWeight="700"
     fontSize="18px"
-    color="limegreen"
+    color="black"
     mb="20px" // Add margin to the bottom
   >
     Multichain Balance
@@ -303,10 +303,10 @@ if (userPortifolio && userPortifolio.data) {
                     <Td>{parseFloat(token.token.balance).toFixed(3)}</Td>
                     <Td>{parseFloat(token.token.balanceUSD).toFixed(2)}</Td>
                     <Td>
-                      <Button border="1px solid limegreen" onClick={() => copyToClipboard(token.address)}>Receive</Button>
+                      <Button border="1px solid black" onClick={() => copyToClipboard(token.address)}>Receive</Button>
                     </Td>
                     <Td>
-                      <Button border="1px solid limegreen" onClick={() => handleSendButtonClick(token.token)}>
+                      <Button border="1px solid black" onClick={() => handleSendButtonClick(token.token)}>
                         Send
                       </Button>
                     </Td>

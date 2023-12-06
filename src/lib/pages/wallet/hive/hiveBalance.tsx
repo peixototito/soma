@@ -246,10 +246,10 @@ export default function HiveBalanceDisplay2() {
                     src={`https://images.hive.blog/u/${user.name}/avatar`}
                     alt="profile avatar"
                     borderRadius="20px"
-                    border="2px solid limegreen"
+                    border="2px solid blue"
                     boxSize="80px"
                   />
-                  <Text fontSize="32px" padding="10px" color="white">
+                  <Text fontSize="32px" padding="10px" color="black">
                     {user.name}
                   </Text>
                 </>
@@ -257,10 +257,10 @@ export default function HiveBalanceDisplay2() {
                   <Button
                     width="170px"
                     borderRadius="10px"
-                    border="1px dashed yellow"
+                    border="1px dashed black"
                     justifyContent="center"
-                    bg={"black"}
-                    color={"white"}
+                    bg={"white"}
+                    color={"black"}
                     _hover={{ bg: "grey" }}
                     onClick={handleOpenPowerUpModal}
                   >
@@ -269,10 +269,10 @@ export default function HiveBalanceDisplay2() {
                   <Button
                     width="170px"
                     borderRadius="10px"
-                    border="1px dashed yellow"
+                    border="1px dashed black"
                     justifyContent="center"
-                    bg={"black"}
-                    color={"white"}
+                    bg={"white"}
+                    color={"black"}
                     _hover={{ bg: "grey" }}
                     onClick={handleOpenPowerDownModal}
                   >
@@ -298,17 +298,17 @@ export default function HiveBalanceDisplay2() {
         {isLoading ? (
           <center>
             <Image width="60px" src="https://i.gifer.com/ZZ5H.gif" alt="loading" />
-            <Text color="white">Loading...</Text>
+            <Text color="black">Loading...</Text>
           </center>
         ) : (
           <>
             <Flex alignItems="center" justifyContent="center">
               <VStack>
 
-              <Text fontWeight="bold" color="orange">
+              <Text fontWeight="bold" color="black">
                 Total Owned: ${ownedTotal.toFixed(2)}
               </Text>
-              <Text fontWeight="bold" color="orange">
+              <Text fontWeight="bold" color="black">
                 Wallet Worth: ${totalWorth.toFixed(2)}
               </Text>
               </VStack>
@@ -346,16 +346,16 @@ export default function HiveBalanceDisplay2() {
               />
             </HStack>
             <Tooltip
-              bg="black"
-              color="white"
+              bg="white"
+              color="black"
               borderRadius="10px"
-              border="1px dashed limegreen"
+              border="1px dashed black"
               label="Buy hive using other crypto"
             >
               <HStack
                 margin="10px"
                 borderRadius="10px"
-                border="1px dashed orange"
+                border="1px dashed black"
                 justifyContent="center"
                 padding="10px"
               >
@@ -370,16 +370,16 @@ export default function HiveBalanceDisplay2() {
             </Tooltip>
   
             <Tooltip
-              bg="black"
-              color="white"
+              bg="white"
+              color="black"
               borderRadius="10px"
-              border="1px dashed limegreen"
+              border="1px dashed black"
               label="Dont! power up!"
             >
               <HStack
                 margin="10px"
                 borderRadius="10px"
-                border="1px dashed orange"
+                border="1px dashed black"
                 justifyContent="center"
                 padding="10px"
               >
@@ -395,7 +395,7 @@ export default function HiveBalanceDisplay2() {
             <Button
               margin="10px"
               borderRadius="10px"
-              border="1px dashed yellow"
+              border="1px dashed black"
               justifyContent="center"
               padding="10px" onClick={handleOpenModal}>
               SEND HIVE
@@ -403,7 +403,7 @@ export default function HiveBalanceDisplay2() {
             <Button
               margin="10px"
               borderRadius="10px"
-              border="1px dashed yellow"
+              border="1px dashed black"
               justifyContent="center"
               padding="10px" onClick={handleOpenSendHBDModal}>
               SEND HBD
@@ -411,7 +411,7 @@ export default function HiveBalanceDisplay2() {
             <Button
               margin="10px"
               borderRadius="10px"
-              border="1px dashed yellow"
+              border="1px dashed black"
               justifyContent="center"
               padding="10px"
               onClick={handleOpenDelegationModal}
@@ -479,13 +479,13 @@ return (
   textAlign="center"
 >
   {labelTooltip ? (
-    <Tooltip label={labelTooltip} bg="black" color="white" borderRadius="10px" border="1px dashed limegreen">
+    <Tooltip label={labelTooltip} bg="white" color="black" borderRadius="10px" border="1px dashed black">
       {labelLink ? (
         <ChakraLink color="black" fontWeight="bold"  href={labelLink} isExternal style={labelStyle}>
           {label}
         </ChakraLink>
       ) : (
-        <Text color="white" fontWeight="bold" cursor="pointer" style={labelStyle}>
+        <Text color="black" fontWeight="bold" cursor="pointer" style={labelStyle}>
           {label}
         </Text>
       )}
@@ -496,13 +496,13 @@ return (
         {label}
       </ChakraLink>
     ) : (
-      <Text color="white" fontWeight="bold" style={labelStyle}>
+      <Text color="black" fontWeight="bold" style={labelStyle}>
         {label}
       </Text>
     )
   )}
   {balanceTooltip ? (
-    <Tooltip label={balanceTooltip} bg="black" color="white" borderRadius="10px" border="1px dashed limegreen">
+    <Tooltip label={balanceTooltip} bg="white" color="black" borderRadius="10px" border="1px dashed black">
     {balanceLink ? (
         <ChakraLink href={balanceLink} isExternal style={balanceStyle}>
           {balance || "Loading..."}

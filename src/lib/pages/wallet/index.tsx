@@ -38,7 +38,7 @@ const Wallet = () => {
   }, [pubkeyContext]);
 
   return (
-    <Tabs color="limegreen" variant="enclosed">
+    <Tabs color="red" variant="enclosed">
       <TabList justifyContent="center">
         <Tab>Tokens</Tab>
         <Tab>NFTs</Tab>

@@ -312,8 +312,8 @@ const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
 
         
         >
-          <Text color="teal" style={{ marginLeft: '5px' }}>R$</Text>
-          <Text style={{ marginLeft: '5px' }} color = 'teal'>{totalWorth.toFixed(2)}</Text> 
+          <Text color="blue" style={{ marginLeft: '5px' }}>R$</Text>
+          <Text style={{ marginLeft: '5px' }} color = 'blue'>{totalWorth.toFixed(2)}</Text> 
           </Button>
     </ChakraLink>
       </Box>
