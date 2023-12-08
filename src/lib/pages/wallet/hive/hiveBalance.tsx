@@ -1,4 +1,4 @@
-import { Image, Box, Table, Thead, Tbody, Tr, Th, Td, Text, Flex, Button, VStack, HStack, Divider, Tooltip } from "@chakra-ui/react";
+import { Image, Link, Box, Table, Thead, Tbody, Tr, Th, Td, Text, Flex, Button, VStack, HStack, Divider, Tooltip } from "@chakra-ui/react";
 import { Link as ChakraLink } from "@chakra-ui/react";
 
 import { useState, useEffect } from "react";
@@ -10,8 +10,8 @@ import * as dhive from "@hiveio/dhive";
 import PowerUpModal from "./powerUpModal";
 import PowerDownModal from "./powerDownModal";
 import DelegationModal from "./delegationModal";
+import { useFetcher } from "react-router-dom";
 
-import FiatBalance from "../fiat/fiat";
 
 const dhiveClient = new dhive.Client([
   "https://api.hive.blog",
@@ -34,6 +34,8 @@ interface User {
   delegated_vesting_shares: string;
   received_vesting_shares: string;
   name?: string;
+  posting_json_metadata?: string;
+  metadata: any;
 }
 
 // send to utils.tsx
@@ -65,9 +67,9 @@ export async function fetchHbdPrice() {
       // Use the cached value if available
       return cache.hbdPrice;
     }
-    const response = await fetch("https://api.coingecko.com/api/v3/simple/price?ids=hive_dollar&vs_currencies=usd");
+    const response = await fetch("https://api.coingecko.com/api/v3/simple/price?ids=hive_dollar&vs_currencies=brl");
     const data = await response.json();
-    const hbdPrice = data.hive_dollar.usd;
+    const hbdPrice = data.hive_dollar.brl;
     // Update the cache
     cache.hbdPrice = hbdPrice;
     return hbdPrice;
@@ -84,9 +86,9 @@ export async function fetchConversionRate() {
       // Use the cached value if available
       return cache.conversionRate;
     }
-    const response = await fetch("https://api.coingecko.com/api/v3/simple/price?ids=hive&vs_currencies=usd");
+    const response = await fetch("https://api.coingecko.com/api/v3/simple/price?ids=hive&vs_currencies=brl");
     const data = await response.json();
-    const conversionRate = data.hive.usd;
+    const conversionRate = data.hive.brl;
     // Update the cache
     cache.conversionRate = conversionRate;
     return conversionRate; // Return the conversion rate as a number
@@ -114,6 +116,9 @@ export default function HiveBalanceDisplay2() {
   const [showDelegationModal, setShowDelegationModal] = useState(false);
   const [sendHBDmodal, setSendHBDmodal] = useState(false);
   const [ownedTotal, setOwnedTotal] = useState<number>(0);
+  const [profileImage, setProfileImage] = useState<string>("https://i.gifer.com/origin/f1/f1a737e4cfba336f974af05abab62c8f_w200.gif");
+  const [delegatedToUserInUSD, setDelegatedToUserInUSD] = useState<string>("0");
+  const [HPdelegatedToUser, setHPdelegatedToUser] = useState<string>("0");
 
   const convertVestingSharesToHivePower = async (
     vestingShares: string,
@@ -148,16 +153,33 @@ export default function HiveBalanceDisplay2() {
       (parseFloat(result.result.total_vesting_fund_hive) * delegatedVestingSharesFloat) /
       parseFloat(result.result.total_vesting_shares);
 
-    const DelegatedToUser = (parseFloat(result.result.total_vesting_fund_hive) * receivedVestingSharesFloat) /
+    const delegatedToUserInUSD = (parseFloat(result.result.total_vesting_fund_hive) * receivedVestingSharesFloat) /
+    parseFloat(result.result.total_vesting_shares);
+    const HPdelegatedToUser = (parseFloat(result.result.total_vesting_fund_hive) * receivedVestingSharesFloat) /
     parseFloat(result.result.total_vesting_shares);
     return {
       hivePower: vestHive.toFixed(3), 
       DelegatedToSomeoneHivePower: DelegatedToSomeoneHivePower.toFixed(3),
-      DelegatedToUser: DelegatedToUser.toFixed(3),
+      delegatedToUserInUSD: delegatedToUserInUSD.toFixed(3),
+      HPdelegatedToUser: HPdelegatedToUser.toFixed(3),
     };
 
   };
 
+  useEffect(() => {
+    const fetchProfileImage = async () => {
+      if (user) {
+        try {
+          const metadata = JSON.parse(user.posting_json_metadata || '');
+          setProfileImage(metadata.profile.profile_image);
+        } catch (error) {
+          console.error('Error parsing JSON metadata:', error);
+        }
+      }
+    };
+    fetchProfileImage();
+  }
+  , [user]);
 
 
   const onStart = async function () {
@@ -172,27 +194,28 @@ export default function HiveBalanceDisplay2() {
             user.received_vesting_shares
           ),
         ]);
-        
-
 
         const hiveWorth = parseFloat(user.balance.split(" ")[0]) * conversionRate;
         const hivePowerWorth =
           (parseFloat(vestingSharesData.hivePower) + parseFloat(vestingSharesData.DelegatedToSomeoneHivePower)) *
           conversionRate;
         const hbdWorth = parseFloat(user.hbd_balance.split(" ")[0]) * hbdPrice;
-        const DelegatedToUser = parseFloat(vestingSharesData.DelegatedToUser) * conversionRate;
+        const delegatedToUserInUSD = parseFloat(vestingSharesData.delegatedToUserInUSD) * conversionRate;
         const savingsWorth = parseFloat(user.savings_hbd_balance.split(" ")[0]) * hbdPrice;
-
-        const total = hiveWorth + hivePowerWorth + hbdWorth + savingsWorth + DelegatedToUser; 
+        const HPdelegatedToUser = parseFloat(vestingSharesData.HPdelegatedToUser) 
+        const total = hiveWorth + hivePowerWorth + hbdWorth + savingsWorth + delegatedToUserInUSD; 
         const total_Owned = Number(hiveWorth) + Number(savingsWorth) + Number(hbdWorth) + Number(hivePowerWorth) ;
         setConversionRate(conversionRate);
         setHbdBalance(user.hbd_balance);
         setHiveBalance(user.balance);
         setSavingsBalance(user.savings_hbd_balance);
-        setHivePower(`${vestingSharesData.DelegatedToSomeoneHivePower}+${vestingSharesData.hivePower} (not delegated)`);
+        setHivePower(`${vestingSharesData.DelegatedToSomeoneHivePower} (emprestado para outros  + ${vestingSharesData.hivePower} (te dando um boost)`);
         setTotalWorth(total);
         setIsLoading(false);
         setOwnedTotal(total_Owned);
+        setDelegatedToUserInUSD(`${delegatedToUserInUSD.toFixed(3).toString()} USD em Poder de Voto`); 
+        setHPdelegatedToUser(`${HPdelegatedToUser.toFixed(3).toString()} HP emprestado para vc`);
+
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -264,7 +287,7 @@ export default function HiveBalanceDisplay2() {
                     _hover={{ bg: "grey" }}
                     onClick={handleOpenPowerUpModal}
                   >
-                    🔺 Power Up
+                    🔺 Ascender o Cosmos
                   </Button>
                   <Button
                     width="170px"
@@ -276,7 +299,7 @@ export default function HiveBalanceDisplay2() {
                     _hover={{ bg: "grey" }}
                     onClick={handleOpenPowerDownModal}
                   >
-                    🔻 Power Down
+                    🔻 Dar uma Broxada
                   </Button>
                   
                 </VStack>
@@ -306,23 +329,23 @@ export default function HiveBalanceDisplay2() {
               <VStack>
 
               <Text fontWeight="bold" color="black">
-                Total Owned: ${ownedTotal.toFixed(2)}
+                Meu Total: ${ownedTotal.toFixed(2)}
               </Text>
               <Text fontWeight="bold" color="black">
-                Wallet Worth: ${totalWorth.toFixed(2)}
+                Valor da Minha Carteira: ${totalWorth.toFixed(2)}
               </Text>
               </VStack>
             </Flex>
             <Divider backgroundColor="red" />
             <HStack spacing={4} align="stretch">
               <BalanceDisplay
-                label="Hive"
+                label="Dinheiro Magico da Internet"
                 balance={hiveBalance}
                 labelTooltip="Native Token of Hive Blockchain"
                 balanceTooltip="Hive tokens are like digital coins on the Hive blockchain, and they have different uses. You can vote on stuff, get premium features, and help with the network and decision-making by staking them. They also reward content makers, keep users engaged, and you can trade them elsewhere. They basically keep Hive running, adding value and community vibes. 🛹🚀"
               ></BalanceDisplay>
               <BalanceDisplay
-                label="Hive Power"
+                label="Poder de Voto"
                 balance={hivePower}
                 labelTooltip="Hive Power signifies influence, voting, and status within Hive blockchain. 🚀🤝"
                 balanceTooltip="Hive Power represents a user's influence and engagement within the Hive blockchain. It's like your reputation and impact score on the platform. When you ´power up Hive tokens by converting liquid Hive into Hive Power, you increase your ability to vote on content and participate in network governance. This boosts your say in decision-making and supports the Hive ecosystem's stability and decentralization. It's like investing in your standing and community involvement on Hive. 🚀🤝s"
@@ -331,13 +354,14 @@ export default function HiveBalanceDisplay2() {
             </HStack>
             <HStack spacing={4} align="stretch">
               <BalanceDisplay
-                label="Dollar Savings"
+                label="Poupança em Dollar"
                 balance={savingsBalance}
                 labelTooltip="Hive Savings are like a savings account for your HBD tokens. 🚀🤝"
                 balanceTooltip="Picture it like planting some Hive coins, but in this case, they're Hive Backed Dollars (HBD), kind of like specialized cannabis strains. You nurture them over time, and they steadily grow. With a 20% increase each year, it's like cultivating a thriving HBD garden. You're investing your time and care, and eventually, you'll have a bountiful harvest of HBD, just like some potent homegrown herb. So, you're tending to your HBD crop, man, and it's growing just as nicely as your favorite buds. 🌱💵🚀"
               />
               <BalanceDisplay
-                label="Hive Dollar"
+                label="Dollar"
+                color="black"
                 balance={hbdBalance}
                 labelTooltip="Hive Backed Dollar (HBD) is a stablecoin pegged to the US Dollar"
                 balanceTooltip="Hive Backed Dollars (HBD) are a stablecoin on the Hive blockchain designed to maintain a value close to one United States dollar. They are backed by Hive cryptocurrency held in a collateralized debt position. HBD provides users with a stable and reliable digital currency for transactions, making it a practical choice for everyday use within the Hive ecosystem."
@@ -345,6 +369,14 @@ export default function HiveBalanceDisplay2() {
   
               />
             </HStack>
+            <Divider backgroundColor="red" />
+            <BalanceDisplay
+              label="Poder Emprestado"
+              balance={HPdelegatedToUser}
+              labelTooltip="How much HivePower People is delegating to You 🚀🤝"
+              
+              ></BalanceDisplay>
+          
             <Tooltip
               bg="white"
               color="black"
@@ -398,7 +430,7 @@ export default function HiveBalanceDisplay2() {
               border="1px dashed black"
               justifyContent="center"
               padding="10px" onClick={handleOpenModal}>
-              SEND HIVE
+              Enviar Dinheiro Magico
             </Button>
             <Button
               margin="10px"
@@ -406,7 +438,7 @@ export default function HiveBalanceDisplay2() {
               border="1px dashed black"
               justifyContent="center"
               padding="10px" onClick={handleOpenSendHBDModal}>
-              SEND HBD
+              Enviar Dollar
             </Button>
             <Button
               margin="10px"
@@ -416,7 +448,7 @@ export default function HiveBalanceDisplay2() {
               padding="10px"
               onClick={handleOpenDelegationModal}
             >
-             👑 Delegate Hive Power to SkateHive 👑
+             👑 Emprestar Poder de Voto para Skatehive 👑
             </Button>
           </>
         )}
@@ -458,8 +490,7 @@ labelTooltip,
 balanceTooltip,
 labelLink,
 balanceLink,
-labelStyle,
-balanceStyle,
+color
 }: {
 label: string;
 balance: string;
@@ -469,34 +500,49 @@ labelLink?: string;
 balanceLink?: string;
 labelStyle?: React.CSSProperties;
 balanceStyle?: React.CSSProperties;
+color?: string;
 }) => {
+
+const balanceStyle: React.CSSProperties = {
+color: color || "black",
+cursor: "pointer",
+};
+
+const labelStyle: React.CSSProperties = {
+color: color || "black",
+fontWeight: "bold",
+cursor: "pointer",
+};
+
+
+
 return (
 <Box
   borderRadius="5px"
   border="1px solid red"
-  width="50%"
+  width="100%"
   padding="10px"
   textAlign="center"
 >
   {labelTooltip ? (
     <Tooltip label={labelTooltip} bg="white" color="black" borderRadius="10px" border="1px dashed black">
       {labelLink ? (
-        <ChakraLink color="black" fontWeight="bold"  href={labelLink} isExternal style={labelStyle}>
+        <Link fontWeight="bold"  href={labelLink} isExternal style={labelStyle}>
           {label}
-        </ChakraLink>
+        </Link>
       ) : (
-        <Text color="black" fontWeight="bold" cursor="pointer" style={labelStyle}>
+        <Text  fontWeight="bold" cursor="pointer" style={labelStyle}>
           {label}
         </Text>
       )}
     </Tooltip>
   ) : (
     labelLink ? (
-      <ChakraLink color="white" fontWeight="bold"  href={labelLink} isExternal style={labelStyle}>
+      <Link fontWeight="bold"  href={labelLink} isExternal style={labelStyle}>
         {label}
-      </ChakraLink>
+      </Link>
     ) : (
-      <Text color="black" fontWeight="bold" style={labelStyle}>
+      <Text fontWeight="bold" style={labelStyle}>
         {label}
       </Text>
     )
@@ -504,18 +550,18 @@ return (
   {balanceTooltip ? (
     <Tooltip label={balanceTooltip} bg="white" color="black" borderRadius="10px" border="1px dashed black">
     {balanceLink ? (
-        <ChakraLink href={balanceLink} isExternal style={balanceStyle}>
+        <Link href={balanceLink} isExternal style={balanceStyle}>
           {balance || "Loading..."}
-        </ChakraLink>
+        </Link>
       ) : (
         <Text style={balanceStyle}>{balance || "PEPE"}</Text>
       )}
     </Tooltip>
   ) : (
     balanceLink ? (
-      <ChakraLink href={balanceLink} isExternal style={balanceStyle}>
+      <Link  href={balanceLink} isExternal style={balanceStyle}>
         {balance || "PEPE"}
-      </ChakraLink>
+      </Link>
     ) : (
       <Text style={balanceStyle}>{balance || "Loading..."}</Text>
     )

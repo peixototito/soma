@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 //@ts-ignore
 import { usePioneer } from '@pioneer-platform/pioneer-react';
 import NFTWallet from './nft/nftWallet';
-import EvmBalance from './evm/evmWallet';
+import EvmBalance from './evm/pioneerBalance';
 import FiatBalance from './fiat/fiat';
 import POAPsNFTWallet from './nft/poapWallet';
 import HiveBalanceDisplay from './hive/hiveBalance';
