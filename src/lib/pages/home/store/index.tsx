@@ -9,6 +9,7 @@ interface Card {
   url?: string;
   hoverImageUrl?: string;
   price?: string;
+  preco?: string; 
 }
 
 const cardData: Card[] = [
@@ -17,75 +18,87 @@ const cardData: Card[] = [
     hoverImageUrl: '', // Specify hover image URL
     subtitle: 'Bermuda Azul',
     url: '',
-    price: 'Valor: 149,90'
+    price: 'Valor: 149,90',
+    preco: '35.000'
     },
     {
     imageUrl: '/assets/loja/shapeazul.jpg',
     subtitle: 'Shape Marfim Azul',
-    price: 'Valor: 189,90'
+    price: 'Valor: 189,90',
+    preco: '45.000'
     },
 
   {
     imageUrl: '/assets/loja/shape.jpg',
     subtitle: 'Shape Selvagem',
-    price: 'Valor: 349,90'
+    price: 'Valor: 349,90',
+    preco: '70.000'
   },
   {
     imageUrl: '/assets/loja/marrom.jpg',
     subtitle: ' Camiseta SoMa Marrom ',
-    price: 'Valor: 99,90'
+    price: 'Valor: 99,90',
+    preco: '25.000'
   },
   {
     imageUrl: '/assets/loja/cruiser.jpg',
     subtitle: 'SoMa ShApE Cruizer',
     hoverImageUrl: '',
-    price: 'Valor: 249,90'
+    price: 'Valor: 249,90',
+    preco: '50.000'
   },
   {
     imageUrl: '/assets/loja/bermudaamarela.jpg',
     subtitle: 'SoMa Bermuda AmarelA',
     url: '',
     hoverImageUrl: '',
-    price: 'Valor: 149,90'
+    price: 'Valor: 149,90',
+    preco: '30.000'
   },
   {
     imageUrl: '/assets/loja/marinho.jpg',
     subtitle: 'SomA Camiseta Marinho',
-    price: 'Valor: 99,90'
+    price: 'Valor: 99,90',
+    preco: '20.000'
   },
   {
     imageUrl: '/assets/loja/verde.jpg',
     subtitle: 'SoMa Teleferico Verde',
     url: '',
-    price: 'Valor: 99,90'
+    price: 'Valor: 99,90',
+    preco: '20.000'
     
   },
   {
     imageUrl: '/assets/loja/telefericopreto.jpg',
     subtitle: 'SoMa Camiseta Teleferico Preta',
     url: '',
-    price: 'Valor: 99,90'
+    price: 'Valor: 99,90',
+    preco: '20.000'
     
   },
   {
     imageUrl: '/assets/loja/somaclassic.jpg',
     subtitle: 'Shape SoMa classic Marfim',
     url: '',
-    price: 'Valor: 189,90'
+    price: 'Valor: 189,90',
+    preco: '38.000'
     
   },
   {
     imageUrl: '/assets/loja/shouldersoma.jpg',
     subtitle: 'Shoulder Bag SoMa Vermelha',
     url: '',
-    price: 'Valor: 99,90'
+    price: 'Valor: 99,90',
+    preco: '20.000'
     
   },
   {
     imageUrl: '/assets/loja/casacosoma.jpg',
     subtitle: 'Moletom SoMa',
     url: '',
-    price: 'Valor: 99,90'
+    price: 'Valor: 99,90',
+    preco: '20.000'
     
   },
 
@@ -99,6 +112,8 @@ const Store: React.FC = () => {
     const [hiveMemo, setHiveMemo] = useState("");
     const [endereco, setEndereco] = useState(""); // Make sure these are declared
 const [email, setEmail] = useState("");
+const [nome, setNome] = useState("");
+const [buyingIndex, setBuyingIndex] = useState(0);
     const handleOpenModal = () => {
       setShowModal(true);
       console.log(showModal)
@@ -195,21 +210,24 @@ const [email, setEmail] = useState("");
                     <Button onClick={() => handleBuy(index)}>Comprar</Button>
                 </center>
                 </VStack>
-                <BuyModal 
-  showModal={showModal}
-  email={email}
-  setShowModal={setShowModal}
-  toAddress={toAddress}
-  setToAddress={setToAddress}
-  amount={amount}
-  setAmount={setAmount}
-  hiveMemo={hiveMemo}
-  setHiveMemo={setHiveMemo}
-  endereco={endereco}
-  setEndereco={setEndereco}
-setEmail={setEmail}
-
-/>
+               <BuyModal
+        showModal={showModal}
+        setShowModal={setShowModal}
+        nome={nome}
+        setNome={setNome}
+        email={email}
+        setEmail={setEmail}
+        toAddress={toAddress}
+        setToAddress={setToAddress}
+        amount={amount}
+        setAmount={setAmount}
+        hiveMemo={hiveMemo}
+        setHiveMemo={setHiveMemo}
+        buyingIndex={buyingIndex}
+        cardData={cardData}
+        endereco={endereco}
+        setEndereco={setEndereco}
+      />
 
             </Box>
           ))}
