@@ -36,7 +36,7 @@ const SendHiveModal: React.FC<SendHiveModalProps> = ({
   hiveMemo,
   setHiveMemo,
 }) => {
-
+  
   const handleTransfer = async () => {
     try {
       // Parse the amount to a float with 3 decimal places

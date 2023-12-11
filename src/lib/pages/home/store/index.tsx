@@ -227,6 +227,7 @@ const [buyingIndex, setBuyingIndex] = useState(0);
         cardData={cardData}
         endereco={endereco}
         setEndereco={setEndereco}
+        preco={card.preco || ''}
       />
 
             </Box>

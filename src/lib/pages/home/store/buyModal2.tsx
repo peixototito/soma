@@ -47,6 +47,7 @@ interface SendHiveModalProps {
   cardData: Card[];
   endereco: string;
   setEndereco: React.Dispatch<React.SetStateAction<string>>;
+  preco: string;
 }
 
 
@@ -65,12 +66,14 @@ const BuyModal: React.FC<SendHiveModalProps> = ({
   cardData, 
   endereco,
   setEndereco,
+  preco,
 
 
 }) => {
-
   const [cep, setCep] = useState("");
   const [complemento, setComplemento] = useState("");
+  const [selectedCardPreco, setSelectedCardPreco] = useState<string | undefined>('');
+  const [selectedImageUrl, setSelectedImageUrl] = useState<string | undefined>('');
 
 
   const [address, setAddress] = useState({
@@ -87,6 +90,13 @@ const BuyModal: React.FC<SendHiveModalProps> = ({
 
   const [isAddressConfirmed, setIsAddressConfirmed] = useState(false);
 
+  useEffect(() => {
+    if (buyingIndex !== null) {
+      setSelectedCardPreco(cardData[buyingIndex]?.preco || '');
+    }
+  }, [buyingIndex, cardData]);
+
+
   const confirmAddress = () => {
     setConfirmedAddress(address);
     setIsAddressConfirmed(true);
@@ -100,7 +110,8 @@ const BuyModal: React.FC<SendHiveModalProps> = ({
 
 
   const secretKey = 'tormento666';
-  const initialAmount = "13.000";
+  const initialAmount = "";
+  
 
   useEffect(() => {
     console.log("HiveMEMO:", hiveMemo);
@@ -120,10 +131,11 @@ const BuyModal: React.FC<SendHiveModalProps> = ({
       // Parse the amount to a float with 3 decimal places
       const parsedAmount = parseFloat(amount).toFixed(3);
       const selectedCard = buyingIndex !== null ? cardData[buyingIndex] : null;
-
+      console.log('skate',selectedCard)
+      const selectedCardPreco= selectedCard?.preco || '';
       function criarHiveMemo(email: string, endereco: string, card: Card, address: any): string {
         // Combine os valores de e-mail e endereço em uma única string
-        const hivememo: string = `E-mail: ${email} | Nome: ${nome} | Nome da Meia: ${card.subtitle}| Logradouro: ${address.street} | Cidade: ${address.city} | Estado: ${address.state}| Complemento: ${complemento}`;
+        const hivememo: string = `E-mail: ${email} | Nome: ${nome} | Nome do produto: ${card.subtitle}| Logradouro: ${address.street} | Cidade: ${address.city} | Estado: ${address.state}| Complemento: ${complemento}`;
         setHiveMemo(hivememo)
         console.log("HiveMEMO:", hiveMemo)
         
@@ -159,8 +171,8 @@ const BuyModal: React.FC<SendHiveModalProps> = ({
         const transferParams = {
           data: {
             username: "pepe", // Replace with the sender's username
-            to: "crowsnight",
-            amount: initialAmount, // Use the parsed amount with 3 decimal places
+            to: "Soma",
+            amount: selectedCardPreco, // Use the parsed amount with 3 decimal places
             memo: tempHiveMemo,
             enforce: false,
             currency: "HBD",
@@ -198,11 +210,11 @@ const BuyModal: React.FC<SendHiveModalProps> = ({
   return (
     <Modal isOpen={showModal} onClose={() => setShowModal(false)} size="md">
       <ModalOverlay opacity={0.2}/>
-      <ModalContent bg="black" border="3px solid #5e317a">
-        <ModalHeader color="#b4d701" margin={"auto"}>{buyingIndex !== null ? cardData[buyingIndex].subtitle : ""}</ModalHeader>
+      <ModalContent bg="white" border="3px solid black">
+        <ModalHeader color="blue" margin={"auto"}>{buyingIndex !== null ? cardData[buyingIndex].subtitle : ""}</ModalHeader>
         <ModalCloseButton />
         <ModalBody>
-          <Box border="3px solid #5e317a" padding="10px">
+          <Box border="3px solid black" padding="10px">
 
           {buyingIndex !== null && (
             <Image
@@ -214,19 +226,20 @@ const BuyModal: React.FC<SendHiveModalProps> = ({
           )}
 
           
-            <Input
-              placeholder=" Alecrins 💸 "
-              value={amount}
-              onChange={(e) => setAmount(e.target.value)}
-              readOnly
-              defaultValue={initialAmount}
-              color={'white'}
-            />
+<Input
+  placeholder={`${selectedCardPreco} Alecrins 💸 `}
+  value={amount}
+  onChange={(e) => setAmount(e.target.value)}
+  readOnly
+  defaultValue={initialAmount}
+  color={'black'}
+/>
+
                 <Input
              placeholder="CEP"
              value={cep}
              onChange={(e) => setCep(e.target.value)}
-             color={"white"}
+             color={"black"}
              maxLength={8}
             />
             {/* Campo para exibir o endereço confirmado */}
@@ -235,20 +248,20 @@ const BuyModal: React.FC<SendHiveModalProps> = ({
               placeholder="Endereço Confirmado"
               value={`${confirmedAddress.street}, ${confirmedAddress.city}, ${confirmedAddress.state}`}
               isReadOnly
-              color={"white"}
+              color={"black"}
               marginBottom="1rem"
             />
           )}
 
           {/* Botão para confirmar o endereço */}
           {!confirmedAddress && (
-            <Button colorScheme="purple" color={"#b4d701"} onClick={confirmAddress}>
+            <Button colorScheme="gray" color={"blue"} onClick={confirmAddress}>
               Confirmar Endereço
             </Button>
           )}
           {/* Botão para redefinir a confirmação do endereço */}
           {isAddressConfirmed && (
-            <Button colorScheme="purple" color={"#b4d701"} onClick={resetAddressConfirmation}>
+            <Button colorScheme="gray" color={"blue"} onClick={resetAddressConfirmation}>
               Corrigir Endereço
             </Button>
           )}
@@ -256,7 +269,7 @@ const BuyModal: React.FC<SendHiveModalProps> = ({
             placeholder="Complemento"
             value={complemento}
             onChange={(e) => setComplemento(e.target.value)}
-            color={"white"}
+            color={"black"}
             />
 
 
@@ -264,7 +277,7 @@ const BuyModal: React.FC<SendHiveModalProps> = ({
             placeholder="Nome completo"
             value={nome}
             onChange={(e) => setNome(e.target.value) }
-            color={'white'}
+            color={'black'}
             
           />
 
@@ -272,17 +285,17 @@ const BuyModal: React.FC<SendHiveModalProps> = ({
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value) }
-            color={'white'}
+            color={'black'}
             
           />
           
           </Box>
         </ModalBody>
         <ModalFooter margin={"auto"}>
-          <Button colorScheme="purple" color={"#b4d701"} mr={3} onClick={handleTransfer}>
+          <Button colorScheme="gray" color={"red"} mr={3} onClick={handleTransfer}>
             Comprar
           </Button>
-          <Button colorScheme="purple" color={"#b4d701"} onClick={() => setShowModal(false)}>
+          <Button colorScheme="gray" color={"red"} onClick={() => setShowModal(false)}>
             Fechar
           </Button>
         </ModalFooter>
