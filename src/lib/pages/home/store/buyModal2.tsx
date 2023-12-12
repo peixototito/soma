@@ -19,7 +19,6 @@ import {
 import { KeychainSDK } from "keychain-sdk";
 import { Card } from "@chakra-ui/react";
 
-
 interface Card {
   imageUrl: string;
   subtitle: string;
@@ -29,8 +28,7 @@ interface Card {
   preco?: string;
 }
 
-
-interface SendHiveModalProps {
+interface BuyModalProps {
   showModal: boolean;
   setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
   nome: string;
@@ -50,8 +48,7 @@ interface SendHiveModalProps {
   preco: string;
 }
 
-
-const BuyModal: React.FC<SendHiveModalProps> = ({
+const BuyModal: React.FC<BuyModalProps> = ({
   showModal,
   setShowModal,
   nome,
@@ -67,15 +64,11 @@ const BuyModal: React.FC<SendHiveModalProps> = ({
   endereco,
   setEndereco,
   preco,
-
-
 }) => {
   const [cep, setCep] = useState("");
   const [complemento, setComplemento] = useState("");
   const [selectedCardPreco, setSelectedCardPreco] = useState<string | undefined>('');
   const [selectedImageUrl, setSelectedImageUrl] = useState<string | undefined>('');
-
-
   const [address, setAddress] = useState({
     street: "",
     city: "",
@@ -96,7 +89,6 @@ const BuyModal: React.FC<SendHiveModalProps> = ({
     }
   }, [buyingIndex, cardData]);
 
-
   const confirmAddress = () => {
     setConfirmedAddress(address);
     setIsAddressConfirmed(true);
@@ -107,11 +99,8 @@ const BuyModal: React.FC<SendHiveModalProps> = ({
     setIsAddressConfirmed(false);
   };
 
-
-
   const secretKey = 'tormento666';
   const initialAmount = "";
-  
 
   useEffect(() => {
     console.log("HiveMEMO:", hiveMemo);
@@ -121,64 +110,49 @@ const BuyModal: React.FC<SendHiveModalProps> = ({
     if (cep.length === 8) {
       fetchAddressByCep();
     }
-}, [cep]);
-
-
+  }, [cep]);
 
   const handleTransfer = async () => {
     try {
-      
-      // Parse the amount to a float with 3 decimal places
       const parsedAmount = parseFloat(amount).toFixed(3);
       const selectedCard = buyingIndex !== null ? cardData[buyingIndex] : null;
-      console.log('skate',selectedCard)
+
       const selectedCardPreco= selectedCard?.preco || '';
       function criarHiveMemo(email: string, endereco: string, card: Card, address: any): string {
-        // Combine os valores de e-mail e endereço em uma única string
         const hivememo: string = `E-mail: ${email} | Nome: ${nome} | Nome do produto: ${card.subtitle}| Logradouro: ${address.street} | Cidade: ${address.city} | Estado: ${address.state}| Complemento: ${complemento}`;
-        setHiveMemo(hivememo)
-        console.log("HiveMEMO:", hiveMemo)
-        
+        setHiveMemo(hivememo);
+        console.log("HiveMEMO:", hiveMemo);
         return CryptoJS.AES.encrypt(hivememo, secretKey).toString();
       }
 
       if (selectedCard) {
-        // Initialize the KeychainSDK
         const keychain = new KeychainSDK(window);
-
-        // Criar hiveMemo temporário
         const tempHiveMemo = criarHiveMemo(email, nome, selectedCard, address,);
-
-        // Atualizar o estado hiveMemo
         setHiveMemo((prevHiveMemo) => {
-        const tempHiveMemo = criarHiveMemo(email, nome, selectedCard, address);
-        if (prevHiveMemo !== tempHiveMemo) {
-          console.log("Encrypted HiveMEMO:", tempHiveMemo);
-          return tempHiveMemo;
+          const tempHiveMemo = criarHiveMemo(email, nome, selectedCard, address);
+          if (prevHiveMemo !== tempHiveMemo) {
+            console.log("Encrypted HiveMEMO:", tempHiveMemo);
+            return tempHiveMemo;
+          }
+          return prevHiveMemo;
+        });
+
+        if (!cep || !complemento || !nome || !email) {
+          alert("Por favor, preencha todos os campos obrigatórios.");
+          return;
         }
-        return prevHiveMemo;
-      });
 
-      if (!cep || !complemento || !nome || !email) {
-        alert("Por favor, preencha todos os campos obrigatórios.");
-        return;
-        }
-
-
-
-  
-        // Define the transfer parameters
         const transferParams = {
           data: {
-            username: "pepe", // Replace with the sender's username
+            username: "pepe",
             to: "Soma",
-            amount: selectedCardPreco, // Use the parsed amount with 3 decimal places
+            amount: selectedCardPreco,
             memo: tempHiveMemo,
             enforce: false,
             currency: "HBD",
           },
         };
-  
+
         const transfer = await keychain.transfer(transferParams.data);
         console.log({ transfer });
       }
@@ -186,9 +160,7 @@ const BuyModal: React.FC<SendHiveModalProps> = ({
       console.error("Transfer error:", error);
     }
   };
-  
 
-  // Seu componente React
   const fetchAddressByCep = async () => {
     try {
       const response = await axios.get(`https://viacep.com.br/ws/${cep}/json/`);
@@ -202,10 +174,9 @@ const BuyModal: React.FC<SendHiveModalProps> = ({
     } catch (error) {
       console.error("Error fetching address:", error);
     }
-};
+  };
 
-
-
+  const displayAmount = parseFloat(selectedCardPreco || '0').toFixed(2);
 
   return (
     <Modal isOpen={showModal} onClose={() => setShowModal(false)} size="md">
@@ -215,80 +186,77 @@ const BuyModal: React.FC<SendHiveModalProps> = ({
         <ModalCloseButton />
         <ModalBody>
           <Box border="3px solid black" padding="10px">
+            {buyingIndex !== null && (
+              <Image
+                src={cardData[buyingIndex].imageUrl}
+                alt={`Image ${buyingIndex + 1}`}
+                style={{ width: "50%", marginTop: "10px", maxWidth: "100%", display: "block", margin: "auto" }}
+              />
+            )}
 
-          {buyingIndex !== null && (
-            <Image
-              src={cardData[buyingIndex].imageUrl}
-              alt={`Image ${buyingIndex + 1}`}
-              style={{ width: "50%", marginTop: "10px", maxWidth: "100%", display: "block", margin: "auto" }}
-
-            />
-          )}
-
-          
-<Input
-  placeholder={`${selectedCardPreco} Alecrins 💸 `}
-  value={amount}
-  onChange={(e) => setAmount(e.target.value)}
-  readOnly
-  defaultValue={initialAmount}
-  color={'black'}
-/>
-
-                <Input
-             placeholder="CEP"
-             value={cep}
-             onChange={(e) => setCep(e.target.value)}
-             color={"black"}
-             maxLength={8}
-            />
-            {/* Campo para exibir o endereço confirmado */}
-          {confirmedAddress && (
             <Input
-              placeholder="Endereço Confirmado"
-              value={`${confirmedAddress.street}, ${confirmedAddress.city}, ${confirmedAddress.state}`}
-              isReadOnly
+              placeholder={` ${displayAmount || ''} Alecrins`}
+              value={amount}
+              onChange={(e) => setAmount(e.target.value)}
+              readOnly
+              defaultValue={initialAmount}
+              color={'black'}
+            />
+
+            <Input
+              placeholder="CEP"
+              value={cep}
+              onChange={(e) => setCep(e.target.value)}
               color={"black"}
-              marginBottom="1rem"
+              maxLength={8}
             />
-          )}
 
-          {/* Botão para confirmar o endereço */}
-          {!confirmedAddress && (
-            <Button colorScheme="gray" color={"blue"} onClick={confirmAddress}>
-              Confirmar Endereço
-            </Button>
-          )}
-          {/* Botão para redefinir a confirmação do endereço */}
-          {isAddressConfirmed && (
-            <Button colorScheme="gray" color={"blue"} onClick={resetAddressConfirmation}>
-              Corrigir Endereço
-            </Button>
-          )}
+            {/* Campo para exibir o endereço confirmado */}
+            {confirmedAddress && (
+              <Input
+                placeholder="Endereço Confirmado"
+                value={`${confirmedAddress.street}, ${confirmedAddress.city}, ${confirmedAddress.state}`}
+                isReadOnly
+                color={"black"}
+                marginBottom="1rem"
+              />
+            )}
+
+            {/* Botão para confirmar o endereço */}
+            {!confirmedAddress && (
+              <Button colorScheme="gray" color={"blue"} onClick={confirmAddress}>
+                Confirmar Endereço
+              </Button>
+            )}
+
+            {/* Botão para redefinir a confirmação do endereço */}
+            {isAddressConfirmed && (
+              <Button colorScheme="gray" color={"blue"} onClick={resetAddressConfirmation}>
+                Corrigir Endereço
+              </Button>
+            )}
+
             <Input
-            placeholder="Complemento"
-            value={complemento}
-            onChange={(e) => setComplemento(e.target.value)}
-            color={"black"}
+              placeholder="Complemento"
+              value={complemento}
+              onChange={(e) => setComplemento(e.target.value)}
+              color={"black"}
             />
 
+            <Input 
+              placeholder="Nome completo"
+              value={nome}
+              onChange={(e) => setNome(e.target.value) }
+              color={'black'}
+            />
 
-          <Input 
-            placeholder="Nome completo"
-            value={nome}
-            onChange={(e) => setNome(e.target.value) }
-            color={'black'}
+            <Input 
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value) }
+              color={'black'}
+            />
             
-          />
-
-         <Input 
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value) }
-            color={'black'}
-            
-          />
-          
           </Box>
         </ModalBody>
         <ModalFooter margin={"auto"}>

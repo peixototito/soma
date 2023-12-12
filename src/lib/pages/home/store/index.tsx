@@ -2,6 +2,7 @@
   import { Flex, Box, Grid, Image, Text, VStack, Link as ChakraLink, Button } from '@chakra-ui/react';
   import { Link as RouterLink } from 'react-router-dom';
   import { useState } from 'react';
+  import { useMemo } from 'react';
   import BuyModal from './buyModal2';
   interface Card {
     imageUrl: string;
