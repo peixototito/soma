@@ -226,9 +226,10 @@ const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     >
 
       <Flex width="100%" justifyContent="space-between" alignItems="center" mb={{ base: 2, md: 0 }}>
-      <Menu>
-      <MenuButton
-          as={Button}
+      <Link to="/secret"  
+      >
+      <Button
+        
           backgroundColor="white"
           border="white 1px solid"
           color="white"
@@ -246,55 +247,9 @@ const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
             boxSize="50px" // Adjust the size as needed
             borderRadius="10px"
           />
-        </MenuButton>
-        <MenuList border="1px solid white" backgroundColor="#593576" color="white">
-          <Link to="https://snapshot.org/#/skatehive.eth" style={{ textDecoration: 'none' }}>
-            <MenuItem
-              _hover={{ backgroundColor: '#65418C', color: 'white' }}
-              backgroundColor="#593576"  // Invert colors on hover
-            >
-             Store
-            </MenuItem>
-          </Link>
-          <Link to="https://hive.vote/dash.php?i=1&trail=steemskate" style={{ textDecoration: 'none' }}>
-            <MenuItem
-              _hover={{ backgroundColor: '#65418C', color: 'white' }}
-              backgroundColor="#593576" // Invert colors on hover
-            >
-              🔗 Curation Trail
-            </MenuItem>
-          </Link>
-          <Link to="https://docs.skatehive.app" style={{ textDecoration: 'none' }}>
-            <MenuItem
-              _hover={{ backgroundColor: '#65418C', color: 'white' }}
-              backgroundColor="#593576"  // Invert colors on hover
-            
-            >
-              	📖 Docs
-            </MenuItem>
-          </Link>
-          <Link to="https:/github.com/sktbrd/skateapp" style={{ textDecoration: 'none' }}>
-            <MenuItem
-              _hover={{ backgroundColor: '#65418C', color: 'white' }}
-              backgroundColor="#593576"  // Invert colors on hover
-            
-            >
-              	💻 Contribute
-            </MenuItem>
-          </Link>
-          {/* <Link to="/becool" style={{ textDecoration: 'none' }}>
-            <MenuItem
-              _hover={{ backgroundColor: '#060126', color: 'white' }}
-              backgroundColor="#593576"  // Invert colors on hover
-  
-            >
-             	🛹 How to be Cool
-            </MenuItem>
-          </Link> */}
-          {/* Add more external links as needed */}
-        </MenuList>
-
-      </Menu>
+        </Button>
+        </Link>
+      
       <Text 
         fontSize={fontSize} 
         fontWeight="medium" 
