@@ -109,7 +109,7 @@ const DesktopTutorial: React.FC = () => {
                     Get Hive Keys in Skatehive Discord Server or 
                     {' '}
                     <Link href='https://docs.skatehive.app/docs/Create-Wallets/hive-wallet' isExternal color="yellow">
-                        create one by yourself (hard mode)
+                        crie uma voce mesmo (hard mode)
                     </Link>
                 </Text>
             </HStack>
