@@ -9,7 +9,7 @@ export const tapes = [
       id: 2,
       title: 'Transworld First Love',
       imageUrl: 'https://images.skatesonr.com/film_cover/2022/12/19/10145.jpg',
-      videoUrl: 'https://odysee.com/$/embed/@SoMa:1/soma-interiorano:3?r=7Qwm6RTBKZNvJYTvdLrWSzEeb9oS25Qw',
+      videoUrl: 'https://odysee.com/$/embed/@SkateOrDie:7/Transworld-FirstLove%282005%29:4',
     },
     {
       id: 3,
