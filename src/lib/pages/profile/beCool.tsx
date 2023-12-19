@@ -54,7 +54,7 @@ export default function HiveBalanceDisplay() {
         borderRadius="12px"
         fontWeight="700"
         fontSize="18px"
-        color="limegreen"
+        color="blue"
         padding="10px"
       >
         Hive Balance
@@ -69,7 +69,7 @@ export default function HiveBalanceDisplay() {
               border="2px solid white"
               boxSize="40px"
             />
-            <Text padding="10px" color="limegreen">
+            <Text padding="10px" color="yellow">
               {user.name}
             </Text>
           </>
@@ -85,7 +85,7 @@ export default function HiveBalanceDisplay() {
         )}
       </Flex>
       <Text>Total Worth in USD: ${totalWorth.toFixed(2)}</Text>
-      {isUserCool() && <Text color="limegreen">You're cool! 😎</Text>}
+      {isUserCool() && <Text color="red">You're cool! 😎</Text>}
     </Box>
   );
 }

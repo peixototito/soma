@@ -59,10 +59,10 @@ const PostFooter: React.FC<Types.PostFooterProps> = ({ onClose, user, author, pe
   
   
   return (
-    <Flex border="1px white solid" padding="20px" justify="space-between" >
+    <Flex border="1px gray solid" padding="20px" justify="space-between" >
       <Button
-        bg="#121212"
-        color="#fff"
+        bg="gray"
+        color="white"
         borderRadius="4px"
         p={2}
         onClick={onClose}
@@ -80,13 +80,13 @@ const PostFooter: React.FC<Types.PostFooterProps> = ({ onClose, user, author, pe
           value={sliderValue} 
           onChange={(value) => setSliderValue(value)}
         >
-          <SliderTrack bg="white">
+          <SliderTrack bg="red">
             <SliderFilledTrack bg="red" />
           </SliderTrack>
           <span role="img" aria-label="Skateboard" style={skateEmojiStyle}>{emojiByAmount[sliderValue.toString()]}</span>
         </Slider>
         
-        <Text color="white" mt={2} textAlign="center">
+        <Text color="black" mt={2} textAlign="center">
           {getFeedbackText(sliderValue)}
         </Text>
       </Box>

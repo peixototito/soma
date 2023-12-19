@@ -48,10 +48,10 @@ const Comment: React.FC<Types.CommentProps> = ({ author, body, created, net_vote
     };
 
     return (
-        <Box border="1px solid #d7a917" borderRadius="10px" padding="15px" margin="10px">
+        <Box border="1px solid #60D0C6" borderRadius="10px" padding="15px" margin="10px">
             <Flex padding="5px" alignItems="center">
-                <Image src={avatarUrl} borderRadius="full" boxSize="40px" mr="3" border={"2px solid #d7a917"}/>
-                <Text color={"#b4d701"} >@{author}</Text>
+                <Image src={avatarUrl} borderRadius="full" boxSize="40px" mr="3" border={"2px solid black"}/>
+                <Text color={"black"} >@{author}</Text>
             </Flex>
             <ReactMarkdown 
                 children={body}
@@ -60,14 +60,14 @@ const Comment: React.FC<Types.CommentProps> = ({ author, body, created, net_vote
                 components={{
                     img: ({ node, alt, src, title, ...props }) => (
                         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                            <img {...props} alt={alt} src={src} title={title} style={{ maxWidth: '100%', height: 'auto', borderRadius:"10px", border:'1px solid limegreen' }} />
+                            <img {...props} alt={alt} src={src} title={title} style={{ maxWidth: '100%', height: 'auto', borderRadius:"10px", border:'1px solid #60D0C6' }} />
                         </div>
                     ),
                     a: ({node, children, ...props}) => <a {...props} style={{ color: 'red' }}>{children}</a>,
-                    p: ({node, children, ...props}) => <p {...props} style={{ color: 'white' }}>{children}</p>,
-                    h1: ({node, children, ...props}) => <h1 {...props} style={{ fontWeight: 'bold',color: '#b4d701', fontSize: '24px' }}>{children}</h1>,
-                    h2: ({node, children, ...props}) => <h2 {...props} style={{ fontWeight: 'bold',color: '#b4d701', fontSize: '20px' }}>{children}</h2>,
-                    h3: ({node, children, ...props}) => <h3 {...props} style={{ fontWeight: 'bold',color: '#b4d701', fontSize: '18px' }}>{children}</h3>,
+                    p: ({node, children, ...props}) => <p {...props} style={{ color: 'black' }}>{children}</p>,
+                    h1: ({node, children, ...props}) => <h1 {...props} style={{ fontWeight: 'bold',color: '#60D0C6', fontSize: '24px' }}>{children}</h1>,
+                    h2: ({node, children, ...props}) => <h2 {...props} style={{ fontWeight: 'bold',color: '#60D0C6', fontSize: '20px' }}>{children}</h2>,
+                    h3: ({node, children, ...props}) => <h3 {...props} style={{ fontWeight: 'bold',color: '#60D0C6', fontSize: '18px' }}>{children}</h3>,
                     blockquote: ({node, children, ...props}) => <blockquote {...props} style={{ borderLeft: '3px solid #d7a917', paddingLeft: '10px', fontStyle: 'italic' }}>{children}</blockquote>,
                     ol: ({node, children, ...props}) => <ol {...props} style={{ paddingLeft: '20px' }}>{children}</ol>,
                     ul: ({node, children, ...props}) => <ul {...props} style={{ paddingLeft: '20px' }}>{children}</ul>,
@@ -75,9 +75,9 @@ const Comment: React.FC<Types.CommentProps> = ({ author, body, created, net_vote
             />
             <Flex justifyContent="space-between" alignItems="center">
                 <Text fontSize="sm">{new Date(created).toLocaleString()}</Text>
-                <Button leftIcon={<span></span>} variant="outline" size="sm" onClick={handleVote} border={"1px solid #d7a917"}>
+                <Button leftIcon={<span></span>} variant="outline" size="sm" onClick={handleVote} border={"1px solid red"}>
                     <img
-                        src="/assets/gifs/crows1.gif"
+                        src="/assets/somaskate2.ico"
                         alt="Vote"
                         style={{
                             maxWidth: '24px', // Set a maximum width for the image

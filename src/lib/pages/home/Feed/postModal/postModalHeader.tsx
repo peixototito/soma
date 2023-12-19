@@ -21,21 +21,21 @@ const PostHeader: React.FC<Types.PostHeaderProps> = ({ title, author, avatarUrl,
     <Flex justifyContent="center" alignItems="center">
       <Box display="flex" alignItems="center">
         <Link to={`/profile/${author}`} >
-          <Box borderRadius="full" border="2px solid #d7a917" display="flex" alignItems="center" p="4">
-            <Image boxSize="2rem" borderRadius="full" src={avatarUrl} alt={author} mr="4" border="2px solid #d7a917" />
-            <Text fontSize="md" color={"#b4d701"}>{author} </Text>
+          <Box borderRadius="full" border="2px solid black" display="flex" alignItems="center" p="4">
+            <Image boxSize="2rem" borderRadius="full" src={avatarUrl} alt={author} mr="4" border="2px solid #60D0C6" />
+            <Text fontSize="md" color={"#60D0C6"}>{author} </Text>
           </Box>
         </Link>
       </Box>
-      <Box borderRadius="10px" border="2px solid #d7a917" flex="1" ml="4">
-        <Heading padding="10px" as="h5" size="md" color={"#b4d701"} >
+      <Box borderRadius="10px" border="2px solid black" flex="1" ml="4">
+        <Heading padding="10px" as="h5" size="md" color={"black"} >
           {title}
         </Heading>
       </Box>
       <a href={peakdUrl} target="_blank" rel="noopener noreferrer">
         <Image src="https://i.ibb.co/VpC46P5/image.png" boxSize="1.5rem" ml="4" />
       </a>
-      <ModalCloseButton onClick={onClose} color={"#d7a917"}/>
+      <ModalCloseButton onClick={onClose} color={"#60D0C6"}/>
     </Flex>  
   );
 }

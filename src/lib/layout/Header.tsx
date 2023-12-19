@@ -253,7 +253,7 @@ const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
       <Text 
         fontSize={fontSize} 
         fontWeight="medium" 
-        color="#f0c33f" 
+        color="black" 
         style={{ marginTop: '2px' }}
       >
       </Text>
@@ -310,7 +310,7 @@ const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
                 onChange={handleSelectChange}
                 style={{
                   backgroundColor: '',//escolher cor
-                  color:"#b4d701",
+                  color:"black",
                   border: "black" 
                   
                 }}

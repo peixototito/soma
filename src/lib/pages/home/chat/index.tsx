@@ -106,7 +106,7 @@ const Chat: React.FC = () => {
   
   const commentTitleStyle = {
     fontWeight: 'bold',
-    color: 'yellow',
+    color: 'black',
     fontSize: '20px',
     paddingLeft: '10px',
   };

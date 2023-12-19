@@ -87,7 +87,7 @@ const PowerDownModal: React.FC<PowerUpModalProps> = ({ isOpen, onClose, user }) 
         justifyContent="center"
         background="rgba(0, 0, 0, 0.5)"
       />
-      <ModalContent bg={"black"} border={"1px solid limegreen"} borderRadius="8px">
+      <ModalContent bg={"black"} border={"1px solid black"} borderRadius="8px">
         <ModalHeader>Power Down</ModalHeader>
         <ModalCloseButton />
         <ModalBody>
