@@ -87,7 +87,7 @@ const VotesLeaderboard: React.FC<votesLeaderboardProps> = ({ username }) => {
       </Text>
       <Box >
         <center>
-        <Text color="white" align="center" fontWeight="bold" mb="4">
+        <Text color="black" align="center" fontWeight="bold" mb="4">
         Gnars account upvotes extreme sports content on Hive blockchain and distributes Hive tokens to shredders daily. 
         Thanks to Hive's tokenomics, no Hive tokens leave the Gnars wallet when it's account upvotes skate content. 
         Hive token rewards are coming from the Hive "Rewards Pool", a pool filled daily with newly minted Hive. 
@@ -96,7 +96,7 @@ const VotesLeaderboard: React.FC<votesLeaderboardProps> = ({ username }) => {
         The remainder is distributed to holders of Hive Power and the witnesses that power the blockchain.The more Hive Power (staked Hive) a user has in their wallet, the more Hive tokens they can "take" from the Hive Reward Pool and give to posts they upvote (curation). The rewards that are given out by curators to quality posts are always split 50/50 between authors and curators.
         So when Gnars Account upvotes something, it EARNS a percentage of it’s own upvote weight, back.
          <br/>
-         <Text color="orange">
+         <Text color="black">
          *Fans who leave thoughtful comments are also eligible towards rewards
          </Text>
         </Text>

@@ -9,6 +9,6 @@ export const defaultFooter : string= `
 |[facebook](https://www.facebook.com/somaskatearte/)|[instagram](https:/www.instagram.com/somaskatearte/)|
 |-|-|
 
-![](https://i.ibb.co/d60DSFq/crn3.jpg)
+![]
  `;
 

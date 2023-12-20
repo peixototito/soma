@@ -46,7 +46,7 @@ export const MarkdownRenderersUpload = {
   ),
   
       
-a: ({ children, ...props }: RendererProps) => <a {...props} style={{ color: 'yellow' }}> {children}</a>,
+a: ({ children, ...props }: RendererProps) => <a {...props} style={{ color: 'red' }}> {children}</a>,
 p: ({ children, ...props }: RendererProps) => <p {...props} style={{ color: 'white', fontSize: '18px', paddingBottom: '15px' }}>{children}</p>,      
 h1: ({ children, ...props }: RendererProps) => <h1 {...props} style={{ fontWeight: 'bold', color: 'white', fontSize: '48px', paddingBottom: '10px' , paddingTop:"10px" }}>{children}</h1>,
 h2: ({ children, ...props }: RendererProps) => <h2 {...props} style={{ fontWeight: 'bold', color: 'white', fontSize: '36px', paddingBottom: '8px' , paddingTop:"10px"}}>{children}</h2>,
@@ -56,13 +56,13 @@ blockquote: ({ children, ...props }: RendererProps) => (
   <div
     style={{
       backgroundColor: '#333',
-      padding: '16px',
-      borderLeft: '4px solid #FFD700', // Gold border
-      margin: '20px 0',
+      padding: '10px',
+      borderLeft: '5px solid ', // Gold border
+      margin: '10px 0',
       borderRadius: '8px',
       boxShadow: '0 4px 6px rgba(0, 0, 0, 0.2)',
-      color: '#FFF',
-      fontStyle: 'italic',
+      color: '',
+      fontStyle: 'Comfortaa Variable',
       fontSize: '18px',
       lineHeight: '1.5',
     }}
@@ -117,7 +117,7 @@ pre: ({ children, ...props }: RendererProps) => (
     <iframe
       {...props}
       src={src}
-      style={{ borderRadius: '10px', marginBottom: '20px', border:'1px yellow solid', minWidth: '600px', minHeight: '400px'}}
+      style={{ borderRadius: '10px', marginBottom: '20px', border:'1px black solid', minWidth: '600px', minHeight: '400px'}}
     />
     </span>
   ),

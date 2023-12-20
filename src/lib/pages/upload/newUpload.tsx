@@ -55,7 +55,7 @@ interface BeneficiaryForBroadcast {
   weight: string;
 }
 const defaultBeneficiaries: Beneficiary[] = [
-  { name: 'beaglexv', percentage: 3 },
+  { name: 'titovieira', percentage: 3 },
   { name: 'steemskate', percentage: 3 },
 ];
 declare global {
@@ -222,7 +222,7 @@ const NewUpload: React.FC = () => {
 
   const renderThumbnailOptions = () => {
     const selectedThumbnailStyle = {
-      border: '2px solid limegreen',
+      border: '2px solid black',
     };
 
     const imageUrls = extractImageUrls(markdownText);
@@ -505,9 +505,9 @@ const handleIncludeFooterChange = () => {
                   onChange={handleTitleChange}
                   placeholder="Escreva o seu título..."
                   fontSize="xl"
-                  color={'white'}
+                  color={'black'}
                   fontWeight="bold"
-                  borderColor="#5E317A"
+                  borderColor="black"
                 />
               </Box>
               <Flex flexDirection={isMobile ? "column" : "row"}>
@@ -518,7 +518,7 @@ const handleIncludeFooterChange = () => {
                     borderWidth={2}
                     borderRadius={10}
                     borderStyle="dashed"
-                    borderColor="#5E317A"
+                    borderColor="black"
                     p={6}
                     alignItems="center"
                     justifyContent="center"
@@ -526,7 +526,7 @@ const handleIncludeFooterChange = () => {
                   >
                     <input {...getImagesInputProps()} />
                     <FaImage size={32} />
-                    <Text color={"#b4d701"}> Clique aqui para adicionar uma imagem ou video</Text>
+                    <Text color={"black"}> Clique aqui para adicionar uma imagem ou video</Text>
                     
                   </VStack>
                     <Box marginTop={4}>
@@ -536,7 +536,7 @@ const handleIncludeFooterChange = () => {
                             thickness="4px"
                             speed="0.65s"
                             emptyColor="gray.200"
-                            color="limegreen"
+                            color="black"
                             size="xl"
                           />
                         ) : null}
@@ -549,8 +549,8 @@ const handleIncludeFooterChange = () => {
                       placeholder="Escreva seu texto..."
                       minHeight="600px"
                       marginTop={4}
-                      borderColor="#5E317A"
-                      color={'white'}
+                      borderColor="blue"
+                      color={'black'}
                     />
                     <Checkbox
                       isChecked={includeFooter}
@@ -558,17 +558,17 @@ const handleIncludeFooterChange = () => {
                       marginLeft={2}
                 
                     >
-                      <p>Divulgue a Crow's Night App</p>
+                      <p>Divulgue a somaskatearte13</p>
                     </Checkbox>
                     <Box marginTop={4}>
-                    <Text fontSize="lg" fontWeight="bold" color={"#b4d701"}>
+                    <Text fontSize="lg" fontWeight="bold" color={"black"}>
                       Opção de  Thumbnail
                     </Text>
                     <Flex flexWrap="wrap">{renderThumbnailOptions()}</Flex>
                   </Box>
                 </Box>
               </Flex>
-              <Button onClick={toggleAdvancedOptions} colorScheme="purple" size="sm" marginTop={2} marginRight={2} color={"#b4d701"} >
+              <Button onClick={toggleAdvancedOptions} colorScheme="gray" size="sm" marginTop={2} marginRight={2} color={"black"} >
                 {showAdvancedOptions ? 'Opções Avançadas' : 'Opções Avançadas'}
               </Button>
               {showAdvancedOptions && (
@@ -608,7 +608,7 @@ const handleIncludeFooterChange = () => {
                         onChange={handleTagsChange}
                         placeholder="Inclua hastags e separe com vírgulas"
                         marginRight={2}
-                        color={"white"}
+                        color={"black"}
                       />
 
                     </Flex>
@@ -619,8 +619,8 @@ const handleIncludeFooterChange = () => {
               )}
                                 <Flex alignItems="center">{renderTags()}</Flex>
 
-              <Button onClick={handleHiveUpload} colorScheme="purple" 
-              color={"#b4d701"}
+              <Button onClick={handleHiveUpload} colorScheme="gray" 
+              color={"black"}
               size="sm" marginTop={2}>
                 Postar!
               </Button>
@@ -628,21 +628,21 @@ const handleIncludeFooterChange = () => {
             <Box
               flex={isMobile ? "auto" : 1}
               p={4}
-              border="3px solid #5E317A"
+              border="3px solid black"
               margin={"15px"}
               borderRadius={"10px"}
               maxWidth={{ base: "100%", md: "50%" }}
               overflowWrap="break-word"
             >
               <Box>
-                <Flex padding="1%" borderRadius="10px" border="3px solid #5E317A" align="center" mb={4}>
-                  <Avatar border="1px solid #d7a917" src={avatarUrl} size="sm" />
+                <Flex padding="1%" borderRadius="10px" border="1px solid black" align="center" mb={4}>
+                  <Avatar border="1px solid black" src={avatarUrl} size="sm" />
                   <Text ml={2} 
-                  fontWeight="bold" color={"#b4d701"} >
+                  fontWeight="bold" color={"black"} >
                     {user?.name}
                   </Text> 
                   <Text  marginLeft={"10px"} fontSize={"36px"} fontWeight={"bold"}> | </Text>
-                  <Text ml={3} fontWeight="bold" style={{ wordBreak: "break-all", maxWidth: "100%", color:'white' }}>
+                  <Text ml={3} fontWeight="bold" style={{ wordBreak: "break-all", maxWidth: "100%", color:'black' }}>
                     {title}
                   </Text>
                 </Flex>

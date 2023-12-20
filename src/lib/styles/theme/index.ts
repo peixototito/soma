@@ -1,5 +1,7 @@
 import { extendTheme } from "@chakra-ui/react";
 import '@fontsource-variable/roboto-mono';
+import '@fontsource/satisfy';
+import '@fontsource-variable/comfortaa';
 
 type GlobalStyleProps = { colorMode: "light" | "dark" };
 
@@ -12,8 +14,8 @@ const themeConfig = {
 export const theme = extendTheme({
   ...themeConfig,
   fonts: {
-  heading: "Terrorplate, sans-serif",
-  body: "Terrorplate, sans-serif", 
+  heading: "font-family: 'Comfortaa Variable, sans-serif",
+  body: "font-family: 'Comfortaa Variable, sans-serif", 
   },
   
 
@@ -22,18 +24,18 @@ export const theme = extendTheme({
       body: { 
         background: "#FEFFFF",
         color:  "black" ,
-        'font-family': 'Terrorplate, sans-serif',
+        'font-family': 'Comfortaa Variable, sans-serif',
 
       },
       p: {
         color: "white",
-        'font-family': 'Terrorplate, sans-serif',
+        'font-family': 'Comfortaa Variable, sans-serif',
 
       },
       
       heading:{
         fontSize: "75px",
-        'font-family': 'Terrorplate, sans-serif',
+        'font-family': 'Comfortaa Variable, sans-serif',
       },
 
       // Style for Webkit scrollbars

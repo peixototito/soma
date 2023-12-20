@@ -13,7 +13,7 @@ import Store from "./store";
   
     return (
       <Flex direction="column" alignItems="center" justifyContent="center">
-        <Tabs isFitted variant="line" width="100%" colorScheme="yellow" {...tabProps} size='sm' >
+        <Tabs isFitted variant="enclosed" width="100%" colorScheme="black" {...tabProps} size='sm' >
           <TabList mb="1em" width="100%">
             <Tab
               fontSize="20px"
@@ -23,20 +23,7 @@ import Store from "./store";
               <VStack><Image src="" alt="" width="40%" height="auto" style={{margin: "-4%"}} /><Text color={"black"}>POST</Text></VStack>
               
             </Tab>
-            {/* <Tab
-              color="white" 
-              border="2px black solid"
-              _selected={{ backgroundColor: "#65418C",color:"white", fontWeight:"bold", border:"1px solid white" }} // Change the background color when selected
-            >
-              <Image src="assets\somaskate.gif" alt="" width="20%" height="auto"/>VIDEOS
-            </Tab> */}
-            {/* <Tab
-              color="white"
-              border="2px limegreen solid"
-              _selected={{ backgroundColor: "limegreen",color:"black", fontWeight:"bold", border:"1px solid white" }} // Change the background color when selected
-            >
-              :video_game: PLAY
-            </Tab> */}
+           
             <Tab
              fontSize="20px"
              border="2px black solid"

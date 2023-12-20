@@ -79,7 +79,7 @@ useEffect(() => {
     <Flex
       key={index}
       borderWidth="1px"
-      borderColor="limegreen"
+      borderColor="blue"
       width="100%"
       alignItems="center"
       padding="10px"

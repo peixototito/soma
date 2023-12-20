@@ -220,7 +220,7 @@ const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
       justifyContent="space-between"
       p={6}
       bg=""
-      border="1px solid black"
+      border="0px solid black"
       position="relative"
       borderRadius="10px"
     >

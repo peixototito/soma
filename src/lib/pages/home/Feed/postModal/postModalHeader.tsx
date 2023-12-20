@@ -23,7 +23,7 @@ const PostHeader: React.FC<Types.PostHeaderProps> = ({ title, author, avatarUrl,
         <Link to={`/profile/${author}`} >
           <Box borderRadius="full" border="2px solid black" display="flex" alignItems="center" p="4">
             <Image boxSize="2rem" borderRadius="full" src={avatarUrl} alt={author} mr="4" border="2px solid #60D0C6" />
-            <Text fontSize="md" color={"#60D0C6"}>{author} </Text>
+            <Text fontSize="md" color={"black"}>{author} </Text>
           </Box>
         </Link>
       </Box>

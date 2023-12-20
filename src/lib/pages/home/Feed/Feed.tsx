@@ -47,7 +47,7 @@ const nodes = [
 ];
 
 const defaultThumbnail =
-  "/assets/crn2.png";
+  "/assets/somaskate2.ico";
 const placeholderEarnings = 69.42;
 
 const randomSentences = [
@@ -377,7 +377,7 @@ const handleVoteClick = async (post: any) => {
     const weight = 10000; // Replace with the desired voting weight
 
     // Call the voteOnContent function to vote on the post
-    await voteOnContent(username, post.permlink, post.author, weight);
+    await voteOnContent(username, post.permlink, post.or, weight);
 
     // Handle successful vote
     console.log("Vote successful!");
@@ -395,7 +395,7 @@ return (
       <>
         <Box
           display="grid"
-          gridTemplateColumns={`repeat(${gridColumns}, minmax(280px, 1fr))`}
+          gridTemplateColumns={`repeat(${gridColumns}, minmax(180px, 1fr))`}
           gridGap={1}
         >
           {loadedPosts.map((post) => (
@@ -432,7 +432,7 @@ return (
               </CardHeader>
 
               
-              <Box padding="10px" height="200px"> 
+              <Box padding="9px" height="150px"> 
                 <Image 
                   objectFit="cover"
                   border="3px solid black"
@@ -463,9 +463,9 @@ return (
                   <Text  
                         color="black" 
                   
-                        paddingLeft="5px"
-                        paddingTop="10px"
-                        paddingRight="5px"
+                        paddingLeft="4px"
+                        paddingTop="9px"
+                        paddingRight="3px"
                         textAlign="center" // Center horizontally
                         display="flex"     // Use flexbox to center vertically
                         justifyContent="center" // Center vertically
@@ -478,24 +478,24 @@ return (
 
               <CardFooter>
                 <Text
-                  color="white"
-                  marginTop = "2px"
+                  color="black"
+                  marginTop = "1px"
                   style={{ display: "flex", alignItems: "center" }} >
 
                 <Link to={`profile/${post.author}`}>
                       <Avatar
                         name={post.author}
-                        border="2px solid black"
-                        borderRadius="100px"
+                        border="1px solid black"
+                        borderRadius="90px"
                         src={`https://images.ecency.com/webp/u/${post.author}/avatar/small`}
-                        width="105%"
-                        height="105%"
+                        width="100%"
+                        height="100%"
                       />
                     </Link>
 
                     
 
-                    <Tooltip color={"white"} backgroundColor={"black"} border={"1px dashed white"} label={<div style={{color: 'white'}}>45% - 🛹 Usuários e Beneficiários <br /> 50% - 🧡 Para quem vota <br /> 5%  - 🏦 Tesouro <br /><br /> Clique para saber mais  </div>} aria-label="View Voters">
+                    <Tooltip color={"white"} backgroundColor={"black"} border={"1px dashed white"} label={<div style={{color: 'black'}}>45% - 🛹 Usuários e Beneficiários <br /> 50% - 🧡 Para quem vota <br /> 5%  - 🏦 Tesouro <br /><br /> Clique para saber mais  </div>} aria-label="View Voters">
                   <Button
                     position="absolute"
                     bottom="10px"
@@ -514,7 +514,7 @@ return (
                       backgroundColor: 'transparent', // Cor de fundo ao passar o mouse
                   }} //dynamically changes font size based on numerical value of post.earnings
                   >
-                   <Text marginBottom={"0px"} color={"teal"} > R$ {(post.earnings*brl).toFixed(2)}</Text>
+                   <Text marginBottom={"0px"} color={"blue"} > R$ {(post.earnings*brl).toFixed(2)}</Text>
                     
                       
                   </Button>
@@ -549,7 +549,7 @@ return (
           ))}
         </Box>
         <Box display="flex" justifyContent="center">
-          <Button variant="outline" colorScheme="red" onClick={loadMorePosts}>
+          <Button variant="outline" colorScheme="black" onClick={loadMorePosts}>
             Assista mais
           </Button>
         </Box>

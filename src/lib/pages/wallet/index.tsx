@@ -52,7 +52,7 @@ const Wallet = () => {
   }, [app, api, app?.wallets, status, pubkeyContext]);
 
   return (
-    <Tabs color="limegreen" variant="enclosed">
+    <Tabs color="black" variant="enclosed">
       <TabList justifyContent="center">
         <Tab>Tokens</Tab>
         <Tab>NFTs</Tab>

@@ -252,7 +252,7 @@ export default function HiveBalanceDisplay2() {
   return (
     <Box
       borderRadius="12px"
-      border="2px solid red"
+      border="1px solid black"
       padding="10px"
       maxWidth={{ base: "100%", md: "100%" }}
     >
@@ -271,7 +271,7 @@ export default function HiveBalanceDisplay2() {
                     src={`https://images.hive.blog/u/${user.name}/avatar`}
                     alt="profile avatar"
                     borderRadius="20px"
-                    border="2px solid blue"
+                    border="2px solid black"
                     boxSize="80px"
                   />
                   <Text fontSize="32px" padding="10px" color="black">
@@ -429,8 +429,8 @@ export default function HiveBalanceDisplay2() {
             <Button
                 margin="10px"
                 borderRadius="10px"
-                background={"red"}
-                color={"blue"}
+                background={"#E67268"}
+                color={"black"}
                 justifyContent="center"
                 padding="10px"
                 onClick={() => setBuyModalShow(true)}
@@ -533,7 +533,7 @@ cursor: "pointer",
 return (
 <Box
   borderRadius="5px"
-  border="1px solid red"
+  border="1px solid black"
   width="100%"
   padding="10px"
   textAlign="center"
