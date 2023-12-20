@@ -131,7 +131,7 @@
       return (
         <>
           <center>
-            <Text fontSize={"48px"} color={"#b4d701"} >
+            <Text fontSize={"48px"} color={"black"} >
               LOJA
             </Text>
           </center>

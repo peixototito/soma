@@ -237,7 +237,7 @@ export default function QFS() {
         <Flex
           direction="row"
           alignItems="center"
-          border={ "3px solid green" }
+          border={ "3px solid black" }
           gap={ 2 }
           borderRadius="md"
           padding={ 1 }
@@ -260,7 +260,7 @@ export default function QFS() {
         <Flex
           direction="row"
           alignItems="center"
-          border={ "3px solid green" }
+          border={ "3px solid black" }
           gap={ 2 }
           borderRadius="md"
           padding={ 1 }
@@ -307,7 +307,7 @@ export default function QFS() {
       <Flex
         direction="row"
         alignItems="center"
-        border={ "3px solid green" }
+        border={ "3px solid black" }
         gap={ 2 }
         borderRadius="md"
         padding={ 1 }
@@ -351,7 +351,7 @@ export default function QFS() {
           <Table
   variant="striped"
   width="100%"
-  border="1px solid green" 
+  border="1px solid black" 
 >
   <Thead>
     <Tr>
@@ -372,11 +372,11 @@ export default function QFS() {
             src={`https://images.hive.blog/u/${user.username}/avatar`}
             alt="profile avatar"
             borderRadius="10px"
-            border="2px solid limegreen"
+            border="2px solid blue"
             boxSize="35px"
           />
         </Td>
-        <Td bg="black"> {/* Set background color for the cell */}
+        <Td bg="white"> {/* Set background color for the cell */}
           <Link style={{ textDecoration: 'none' }} href={"https://skatehive.app/profile/" + user.username} isExternal>
             @{user.username}
           </Link>
