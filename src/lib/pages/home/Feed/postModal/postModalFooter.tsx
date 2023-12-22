@@ -9,11 +9,11 @@ import * as Types from '../types'
 const PostFooter: React.FC<Types.PostFooterProps> = ({ onClose, user, author, permlink, weight = 10000 }) => {
   const [sliderValue, setSliderValue] = useState(0);
   const getFeedbackText = (value: number) => {
-    if (value === -10000) return "Seu fraco!";
+    if (value === -10000) return "SuMa";
     if (value === -5000) return "Não gostei muito.";
     if (value === 0) return "Tenta outra vez!";
-    if (value === 5000) return "Boa, bloder!";
-    if (value === 10000) return "Você é trevoso!";
+    if (value === 5000) return "Boa, meu nobre!";
+    if (value === 10000) return "SOMA!";
     return "";
   };
   

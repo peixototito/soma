@@ -87,7 +87,7 @@ const PostPage: React.FC = () => {
 
   const commentTitleStyle = {
     fontWeight: 'bold',
-    color: '#d9d5a0',
+    color: 'black',
     fontSize: '20px',
     paddingBottom: '8px',
   };

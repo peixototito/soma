@@ -30,7 +30,7 @@ import * as Types from '../types';
 import { MarkdownRenderers } from '../../../utils/MarkdownRenderers';
 import HiveLogin from '../../api/HiveLoginModal';
 const nodes = [
-  "https://rpc.ecency.com",
+ 
   "https://api.deathwing.me",
   "https://api.hive.blog",
   "https://api.openhive.network",
@@ -277,7 +277,7 @@ const transformedContent = transformYouTubeContent(content);
 return (
   <Modal isOpen={isOpen} onClose={onClose} size="3xl">
     <ModalOverlay />
-    <ModalContent background = {'white'} border={'3px solid red'}>
+    <ModalContent background = {'white'} border={'3px solid black'}>
       <ModalHeader>
         <PostHeader title={title} author={author} avatarUrl={avatarUrl} postUrl={postUrl} permlink={permlink} onClose={onClose} />
         {isUserLoggedIn && user.name === author && !isEditing && (
@@ -310,9 +310,9 @@ return (
       <Comments comments={comments} commentPosted={commentPosted} blockedUser={"hivebuzz"} permlink=''/>
       <HStack justifyContent="space-between">
         <Link to={{ pathname: cleanUrl, state: { post: postData } } as any}>
-          <Button color="white" bg="black" margin="15px" border="1px solid red" onClick={handleViewFullPost}>Ver o post completo</Button>
+          <Button color="white" bg="black" margin="15px" border="1px solid black" onClick={handleViewFullPost}>Ver o post completo</Button>
         </Link>
-        <Button color="white" bg="black" border="1px solid blue" margin="15px" onClick={handleCopyPostLink}>
+        <Button color="white" bg="black" border="1px solid black" margin="15px" onClick={handleCopyPostLink}>
           {postLinkCopied ? 'Link Copied!' : 'Compartilhar post'}
         </Button>
       </HStack>   
@@ -330,7 +330,7 @@ return (
         </div>
       ) : (
         <center>
-        <Button color="black" bg="gray"  margin="10px" border="1px solid blue" onClick={() => setShowLoginModal(true)}>Login to Comment | Vote</Button>
+        <Button color="black" bg="gray"  margin="10px" border="1px solid black" onClick={() => setShowLoginModal(true)}>Login to Comment | Vote</Button>
 
         </center>
       )}

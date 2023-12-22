@@ -29,7 +29,7 @@ import { compileFunction } from "vm";
 import * as Types from './types';
 
 const nodes = [
-  "https://rpc.ecency.com",
+
   "https://api.deathwing.me",
   "https://api.hive.blog",
   "https://api.openhive.network",
@@ -191,7 +191,7 @@ const GnarsBlog = ({ tags }: Types.GnarsBlogProps) => {
           {posts.map((post) => (
             <Card
               border="1px"
-              borderColor="limegreen"
+              borderColor="black"
               bg="black"
               key={post.permlink}
               maxW="md"
