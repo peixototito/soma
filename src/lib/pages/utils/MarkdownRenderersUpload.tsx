@@ -33,13 +33,13 @@ export const MarkdownRenderersUpload = {
           maxWidth: '100%',
           height: 'auto',
           borderRadius: '10px',
-          border: '1px solid limegreen',
+          border: '1px solid black',
           margin: '0 auto', // Center the image horizontally using margin
         }}
         onError={(e) => {
           // Handle image loading error by replacing the source with a default image
           e.currentTarget.src =
-            '/assets/crn3.jpg'; // Replace with the URL of your default image
+            '/assets/somalogo.jpg'; // Replace with the URL of your default image
         }}
       />
     </span>
@@ -47,11 +47,11 @@ export const MarkdownRenderersUpload = {
   
       
 a: ({ children, ...props }: RendererProps) => <a {...props} style={{ color: 'red' }}> {children}</a>,
-p: ({ children, ...props }: RendererProps) => <p {...props} style={{ color: 'white', fontSize: '18px', paddingBottom: '15px' }}>{children}</p>,      
-h1: ({ children, ...props }: RendererProps) => <h1 {...props} style={{ fontWeight: 'bold', color: 'white', fontSize: '48px', paddingBottom: '10px' , paddingTop:"10px" }}>{children}</h1>,
-h2: ({ children, ...props }: RendererProps) => <h2 {...props} style={{ fontWeight: 'bold', color: 'white', fontSize: '36px', paddingBottom: '8px' , paddingTop:"10px"}}>{children}</h2>,
-h3: ({ children, ...props }: RendererProps) => <h3 {...props} style={{ fontWeight: 'bold', color: 'white', fontSize: '30px', paddingBottom: '6px' , paddingTop:"10px"}}>{children}</h3>,
-h4: ({ children, ...props }: RendererProps) => <h4 {...props} style={{ fontWeight: 'bold', color: 'white', fontSize: '26px', paddingBottom: '4px' , paddingTop:"10px"}}>{children}</h4>,
+p: ({ children, ...props }: RendererProps) => <p {...props} style={{ color: 'black', fontSize: '18px', paddingBottom: '15px' }}>{children}</p>,      
+h1: ({ children, ...props }: RendererProps) => <h1 {...props} style={{ fontWeight: 'bold', color: 'black', fontSize: '48px', paddingBottom: '10px' , paddingTop:"10px" }}>{children}</h1>,
+h2: ({ children, ...props }: RendererProps) => <h2 {...props} style={{ fontWeight: 'bold', color: 'black', fontSize: '36px', paddingBottom: '8px' , paddingTop:"10px"}}>{children}</h2>,
+h3: ({ children, ...props }: RendererProps) => <h3 {...props} style={{ fontWeight: 'bold', color: 'black', fontSize: '30px', paddingBottom: '6px' , paddingTop:"10px"}}>{children}</h3>,
+h4: ({ children, ...props }: RendererProps) => <h4 {...props} style={{ fontWeight: 'bold', color: 'black', fontSize: '26px', paddingBottom: '4px' , paddingTop:"10px"}}>{children}</h4>,
 blockquote: ({ children, ...props }: RendererProps) => (
   <div
     style={{
@@ -169,7 +169,7 @@ center: ({ children, ...props }: RendererProps) => (
   <center
     {...props}
     style={{
-      color: 'white'
+      color: 'black'
     }}
   >
     {children}

@@ -400,7 +400,7 @@ return (
         >
           {loadedPosts.map((post) => (
             <Card
-              border="2px"
+              border="1px"
               borderColor="black"
               bg="#FAFAFA"
               key={post.permlink}
@@ -435,8 +435,8 @@ return (
               <Box padding="9px" height="150px"> 
                 <Image 
                   objectFit="cover"
-                  border="3px solid black"
-                  borderRadius="35px"
+                  border="1px solid black"
+                  borderRadius="xl"
                   src={post.thumbnail}
                   alt="Post Thumbnail"
                   height="100%"
@@ -495,7 +495,7 @@ return (
 
                     
 
-                    <Tooltip color={"white"} backgroundColor={"black"} border={"1px dashed white"} label={<div style={{color: 'black'}}>45% - 🛹 Usuários e Beneficiários <br /> 50% - 🧡 Para quem vota <br /> 5%  - 🏦 Tesouro <br /><br /> Clique para saber mais  </div>} aria-label="View Voters">
+                    <Tooltip color={"white"} backgroundColor={"white"} border={"1px dashed white"} label={<div style={{color: 'black'}}>45% - 🛹 Usuários e Beneficiários <br /> 50% - 🧡 Para quem vota <br /> 5%  - 🏦 Tesouro <br /><br /> Clique para saber mais  </div>} aria-label="View Voters">
                   <Button
                     position="absolute"
                     bottom="10px"

@@ -20,7 +20,7 @@ const Page404 = () => {
       <Heading>You found nothing !</Heading>
 
       <Box maxWidth={[280, 400]} marginX="auto">
-        <Image border="1px solid limegreen" borderRadius="10px" width={400} src="/assets/404.gif" />
+        <Image border="1px solid black" borderRadius="10px" width={400} src="/assets/404.gif" />
 
       </Box>
 

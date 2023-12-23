@@ -190,7 +190,7 @@ const Chat: React.FC = () => {
   }, []);
 
   const commentCardStyle = {
-    border: '1px solid teal',
+    border: '1px solid black',
     borderRadius: '10px',
     padding: '10px',
     margin: '3px',
@@ -244,7 +244,7 @@ const Chat: React.FC = () => {
     position: 'fixed',
     bottom: '30px',
     right: isSmallScreen ? '5px' : '20px',
-    backgroundColor: 'black',
+    backgroundColor: 'white',
     border:'1px solid red',
     zIndex: 2000,
     borderRadius: '100%',
@@ -252,7 +252,7 @@ const Chat: React.FC = () => {
   return (
     <>
       <Button style={chatToggleButtonStyle} onClick={toggleChat}>
-        {isChatVisible ? '' : <img style={{ width: '50px', height: '50px', borderRadius: '100%' }} src='/assets/gifs/skull.gif' alt='Chat Icon'></img>}
+        {isChatVisible ? '' : <img style={{ width: '40px', height: '50px', borderRadius: '100%' }} src='/assets/somalogo.jpg' alt='Chat Icon'></img>}
       </Button>
   
       {isChatVisible && (
@@ -262,7 +262,7 @@ const Chat: React.FC = () => {
           <div style={{ padding: '0px', borderBottom: '1px solid white', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
   
             <div style={{ display: 'flex', alignItems: 'center' }}>
-              <img onClick={fetchComments} style={{ cursor: 'pointer', width: '30px', height: 'auto', borderRadius: '100%' }} src='/assets/gifs/skull.gif' alt='Chat Icon' />
+              <img onClick={fetchComments} style={{ cursor: 'pointer', width: '30px', height: 'auto', borderRadius: '100%' }} src='/assets/skatebird.gif' alt='Chat Icon' />
               <p style={commentTitleStyle}>Troll Box</p>
             </div>
             
@@ -311,8 +311,8 @@ const Chat: React.FC = () => {
                         <Button 
                           onClick={() => setParentId(comment.id)}
                           style={{ 
-                            border: "1px solid limegreen", 
-                            backgroundColor: "black", 
+                            border: "1px solid black", 
+                            backgroundColor: "white", 
                             fontSize: '10px',
                             padding: '0px 0px',
                             maxHeight: '15px'
@@ -362,7 +362,7 @@ const Chat: React.FC = () => {
                       fontSize="10px"
                       padding="3px 6px"
                       height="20px"
-                      border="1px solid red"
+                      border="1px solid blue"
                       onClick={handlePostComment}
                       disabled={isPostingComment} // Disable the button while posting
                     >

@@ -330,7 +330,7 @@ return (
         </div>
       ) : (
         <center>
-        <Button color="black" bg="gray"  margin="10px" border="1px solid black" onClick={() => setShowLoginModal(true)}>Login to Comment | Vote</Button>
+        <Button color="white" bg="gray"  margin="10px" border="1px solid black" onClick={() => setShowLoginModal(true)}>Login to Comment | Vote</Button>
 
         </center>
       )}

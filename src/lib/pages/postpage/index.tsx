@@ -172,7 +172,7 @@ const PostPage: React.FC = () => {
   };
   const titleStyle = {
     fontWeight: 'bold',
-    color: '#d9d5a0',
+    color: 'black',
     fontSize: '26px',
     padding: '20px',
     borderRadius: '10px',
@@ -226,7 +226,7 @@ const PostPage: React.FC = () => {
               onChange={(e) => setCommentContent(e.target.value)}
               placeholder="Escreva seu comentário..."
             />
-            <Button border="1px solid white" mt="10px" onClick={handlePostComment} color="white" backgroundColor="black">
+            <Button border="1px solid white" mt="10px" onClick={handlePostComment} color="black" backgroundColor="black">
               Postar comentário
             </Button>
           </Box>
@@ -250,7 +250,7 @@ const PostPage: React.FC = () => {
                       borderRadius="50%"
                       marginRight="8px"
                     />
-                    <h1 style={{ color: '#D9D5A0' }}>{comment.author} </h1>
+                    <h1 style={{ color: 'black' }}>{comment.author} </h1>
                   </Flex>
                   <ReactMarkdown
                     children={comment.body}

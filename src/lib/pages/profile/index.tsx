@@ -3,6 +3,10 @@ import useAuthUser from "../home/api/useAuthUser";
 import React, { useEffect, useState } from 'react';
 import HiveBlog from "../home/Feed/Feed";
 import HiveBalanceDisplay from "../wallet/hive/hiveBalance";
+import '@fontsource/schoolbell';
+import '@fontsource-variable/comfortaa';
+import '@fontsource/yellowtail';
+import '@fontsource-variable/caveat';
 
 interface User {
   name?: string;
@@ -35,8 +39,8 @@ export default function ProfilePage() {
   return (
     <Box
       borderRadius="12px"
-      border="1px solid red"
-      fontFamily="'Courier New', monospace"
+      border="1px solid black"
+      fontFamily="'Comfortaa Variable, sans-serif'"
       position="relative" // Add position relative to the container
       overflow="hidden"   // Hide overflow
     >
@@ -49,7 +53,7 @@ export default function ProfilePage() {
           top="50%"    // Center vertically
           transform="translate(-50%, -50%)"   // Center alignment
           borderRadius="50%"
-          border="2px solid #5E317A"
+          border="2px solid blue"
           boxSize="100px"
           bg="white"    // Add a white background for the profile image
           boxShadow="0px 2px 6px rgba(0, 0, 0, 0.1)"   // Add a subtle shadow
