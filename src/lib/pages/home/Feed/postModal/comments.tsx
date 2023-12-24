@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, } from 'react';
 import { Box, Text, Image, Flex, Button, Tooltip } from '@chakra-ui/react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -9,7 +9,9 @@ import voteOnContent from '../../api/voting';
 
 import * as Types from '../types'; 
 
-const Comment: React.FC<Types.CommentProps> = ({ author, body, created, net_votes, permlink }) => {
+import CommentBox from './commentBox';
+
+const Comment: React.FC<Types.CommentProps> = ({ author, body, created, net_votes, permlink  }) => {
     const avatarUrl = `https://images.ecency.com/webp/u/${author}/avatar/small`;
     const { user } = useAuthUser();
     const [localNetVotes, setNetVotes] = useState(net_votes);
@@ -98,9 +100,9 @@ const Comments: React.FC<Types.CommentsProps> = ({ comments, commentPosted, bloc
 
   useEffect(() => {
       if (commentPosted) {
-          // Logic to re-fetch comments when a new one is posted
-          // For now, I'm just simulating a re-fetch by setting the local state
-          // Replace this with your actual fetch logic
+          // Logic to re- comments when a new one is posted
+          // For now, I'm just simulating a re- by setting the local state
+          // Replace this with your actual  logic
           setLocalComments(comments);
       }
   }, [commentPosted, comments]);

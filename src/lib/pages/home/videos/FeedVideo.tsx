@@ -52,7 +52,7 @@ const HiveVideos: React.FC = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   useEffect(() => {
-    const fetchPosts = async () => {
+    const Posts = async () => {
       try {
         const query = {
           tag: 'hive-173115',
@@ -64,7 +64,7 @@ const HiveVideos: React.FC = () => {
         console.log(error);
       }
     };
-    fetchPosts();
+    Posts();
   }, []);
 
   const extractIframes = (markdownContent: string): string[] => {

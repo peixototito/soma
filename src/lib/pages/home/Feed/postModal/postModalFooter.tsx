@@ -6,8 +6,15 @@ import HiveLogin from '../../api/HiveLoginModal';
 
 import * as Types from '../types'
 
-const PostFooter: React.FC<Types.PostFooterProps> = ({ onClose, user, author, permlink, weight = 10000 }) => {
-  const [sliderValue, setSliderValue] = useState(0);
+const PostFooter: React.FC<Types.PostFooterProps> = ({ onClose, user, author, permlink, weight = 10000, userVote }) => {
+  const [sliderValue, setSliderValue] = useState(10000);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null); // Track error message
+  const [isErrorModalOpen, setIsErrorModalOpen] = useState(false); // Track modal visibility
+  const [feedbackText, setFeedbackText] = useState(''); // Track feedback text
+  const [voteMessage, setVoteMessage] = useState('Vote'); // Track vote button text
+
+
+
   const getFeedbackText = (value: number) => {
     if (value === -10000) return "SuMa";
     if (value === -5000) return "Não gostei muito.";
@@ -31,6 +38,13 @@ const PostFooter: React.FC<Types.PostFooterProps> = ({ onClose, user, author, pe
       await voteOnContent(user.name, permlink, author, sliderValue);
       console.log("Voting successful!");
       // handle the vote result here
+      // handle the vote result here
+      userVote.isVoted = true;
+      userVote.percent = sliderValue;
+      
+      setVoteMessage('Você já votou');
+      const feedback = getFeedbackText(sliderValue);
+      setFeedbackText(feedback);
     } catch (error) {
       console.error("Voting failed:", error);
   

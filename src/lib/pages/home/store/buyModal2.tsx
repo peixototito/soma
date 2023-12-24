@@ -108,7 +108,7 @@ const BuyModal: React.FC<BuyModalProps> = ({
 
   useEffect(() => {
     if (cep.length === 8) {
-      fetchAddressByCep();
+      AddressByCep();
     }
   }, [cep]);
 
@@ -161,7 +161,7 @@ const BuyModal: React.FC<BuyModalProps> = ({
     }
   };
 
-  const fetchAddressByCep = async () => {
+  const AddressByCep = async () => {
     try {
       const response = await axios.get(`https://viacep.com.br/ws/${cep}/json/`);
       const { logradouro, localidade, uf } = response.data;
@@ -172,7 +172,7 @@ const BuyModal: React.FC<BuyModalProps> = ({
         state: uf,
       });
     } catch (error) {
-      console.error("Error fetching address:", error);
+      console.error("Error ing address:", error);
     }
   };
 

@@ -61,7 +61,7 @@ const GnarsBlog = ({ tags }: Types.GnarsBlogProps) => {
   const [url, setUrl] = useState<string>("");
 
 
-  const fetchPostEarnings = async (
+  const PostEarnings = async (
     author: string,
     permlink: string
   ): Promise<number> => {
@@ -77,20 +77,20 @@ const GnarsBlog = ({ tags }: Types.GnarsBlogProps) => {
       setNodeIndex(newIndex);
       setClient(new Client(nodes[newIndex]));
       console.log(`Switched to node: ${nodes[newIndex]}`);
-      return fetchPostEarnings(author, permlink);
+      return PostEarnings(author, permlink);
     }
   };
 
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  const fetchPosts = async () => {
+  const Posts = async () => {
     setIsLoading(true);
 
     try {
       const tagQuery = tags.map((tag) => `tag:${tag}`).join(' OR ');
 
       const query = {
-        limit: tags.length * 2, // Fetch 2 posts for each tag
+        limit: tags.length * 2, //  2 posts for each tag
         tag: tagQuery,
       };
       const result = await client.database.getDiscussions("created", query);
@@ -107,7 +107,7 @@ const GnarsBlog = ({ tags }: Types.GnarsBlogProps) => {
       const updatedPostsWithEarnings: Types.Post[] = await Promise.all(
         postsWithThumbnails.map(async (post) => {
           try {
-            const earnings = await fetchPostEarnings(post.author, post.permlink);
+            const earnings = await PostEarnings(post.author, post.permlink);
             return { ...post, earnings };
           } catch (error) {
             console.log(error);
@@ -125,7 +125,7 @@ const GnarsBlog = ({ tags }: Types.GnarsBlogProps) => {
   };
 
   useEffect(() => {
-    fetchPosts();
+    Posts();
   }, [tags]);
 
   const handlePostClick = (post: Types.Post) => {
@@ -176,6 +176,7 @@ const GnarsBlog = ({ tags }: Types.GnarsBlogProps) => {
               isOpen={isOpen}
               comments={comments}
               postUrl={selectedPost.url}
+              userVote={selectedPost.userVote}
             />
           )}
         </ModalContent>
@@ -219,7 +220,7 @@ const GnarsBlog = ({ tags }: Types.GnarsBlogProps) => {
               <Box padding="10px" height="200px">
                 <Image
                   objectFit="cover"
-                  border="1px solid limegreen"
+                  border="1px solid black"
                   borderRadius="10px"
                   src={post.thumbnail}
                   alt="Post Thumbnail"

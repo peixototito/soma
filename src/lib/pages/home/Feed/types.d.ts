@@ -21,6 +21,7 @@ export interface CommentProps {
   parentId: string; // Add this field to store the parent ID
   id: string; // Add this field to store the unique identifier of the comment
   replies: CommentProps[]; 
+  repliesFetched?: []; // for child comments
   limit: number;
   blockedUser: string;
   parent_permlink: string;
@@ -63,6 +64,7 @@ permlink: string;
 weight: number;
 comments: CommentProps[];
 postUrl: string;
+userVote: any;
 }
 
 export interface PostProps {
@@ -88,6 +90,7 @@ weight: number;
 earnings: number;
 postUrl: string;
 url: string;
+userVote: any;
 }
 
 export interface PostFooterProps {
@@ -96,6 +99,7 @@ user: any;
 author: string; 
 permlink: string; 
 weight?: number; 
+userVote: any;
 }
 
 export interface EarningsModalProps {

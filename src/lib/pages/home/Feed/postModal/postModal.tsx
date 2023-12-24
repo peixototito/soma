@@ -11,6 +11,7 @@ import {
   Button,
   Textarea,
   HStack,
+  Flex,
 } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 
@@ -51,7 +52,9 @@ const PostModal: React.FC<Types.PostModalProps> = ({
   permlink,
   weight,
   comments = [],
-  postUrl
+  postUrl,
+  userVote
+
 }) => {
   
   const avatarUrl = `https://images.ecency.com/webp/u/${author}/avatar/small`;
@@ -63,7 +66,6 @@ const PostModal: React.FC<Types.PostModalProps> = ({
   const [editedContent, setEditedContent] = useState(content);
   const [client, setClient] = useState(new Client(nodes[0]));
   const [nodeIndex, setNodeIndex] = useState(0);
-  console.log(postUrl)
   const [showLoginModal, setShowLoginModal] = useState(false); // State to control the login modal visibility
 
 
@@ -325,8 +327,8 @@ return (
         parentPermlink={permlink}
         onCommentPosted={() => setCommentPosted(!commentPosted)}
       />
-          <PostFooter onClose={onClose} user={user} author={author} permlink={permlink} weight={weight} />
-
+        <PostFooter onClose={onClose} user={user} author={author} permlink={permlink} weight={weight} userVote={userVote}  />
+        
         </div>
       ) : (
         <center>

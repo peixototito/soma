@@ -14,7 +14,7 @@ const ThatsGnarly = () => {
     const [submissions, setSubmissions] = useState<Submission[]>([]);
 
     useEffect(() => {
-        const fetchSubmissions = async () => {
+        const Submissions = async () => {
             try {
                 const response = await axios.get(
                     "https://thatsgnar.ly/routes/submissions?page=5&take=3&filter=new&period=all&scopeId=thatsgnarly"
@@ -27,7 +27,7 @@ const ThatsGnarly = () => {
             }
         };
 
-        fetchSubmissions();
+        Submissions();
     }, []);
 
     return (
