@@ -19,6 +19,7 @@ import { CSSProperties } from 'react';
 import { FaRedo } from 'react-icons/fa';
 import { Spinner } from '@chakra-ui/react';
 
+
 type User = {
   name: string;
 } | null;
@@ -362,7 +363,7 @@ const Chat: React.FC = () => {
                       fontSize="10px"
                       padding="3px 6px"
                       height="20px"
-                      border="1px solid blue"
+                      border="1px solid black"
                       onClick={handlePostComment}
                       disabled={isPostingComment} // Disable the button while posting
                     >

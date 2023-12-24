@@ -582,7 +582,7 @@ flex="1"
               <Box padding="20px" height="200px"> 
                 <Image 
                   objectFit="cover"
-                  border="3px solid black"
+                  border="1px solid black"
                   borderRadius="xl"
                   src={post.thumbnail}
                   alt="Post Thumbnail"
@@ -610,7 +610,7 @@ flex="1"
                   <Text 
                         color="black" 
                         paddingLeft="4px"
-                        paddingTop="9px"
+                        paddingTop="20px"
                         paddingRight="3px"
                         textAlign="center" // Center horizontally
                         display="flex"     // Use flexbox to center vertically
@@ -634,7 +634,7 @@ flex="1"
                     : post.earnings >= 20 && post.earnings <= 30
                     ? `url('https://images.hive.blog/0x0/https://files.peakd.com/file/peakd-hive/web-gnar/23u5bNzQ1Witg6qMPYBbgxzPzAx8iR8TDYWA5goRhanYgcqTGofXvPd9vMdDVogKoSwTb.gif')`
                     : 'none',
-                    backgroundSize: '100% auto',
+                    backgroundSize: '0% auto',
                     backgroundPosition: 'center bottom',
                     backgroundRepeat: 'no-repeat',
                     overflow: 'hidden',
@@ -655,7 +655,7 @@ flex="1"
                 <Link to={`profile/${post.author}`}>
                       <Image
                         border="1px solid black"
-                        borderRadius="90px"
+                        borderRadius="5px"
                         src={`https://images.ecency.com/webp/u/${post.author}/avatar/small`}
                         width="100%"
                         height="100%"
@@ -686,16 +686,16 @@ flex="1"
                           backgroundColor: 'transparent', // Cor de fundo ao passar o mouse
                   }} //dynamically changes font size based on numerical value of post.earnings
                   >
-                   <Text marginBottom={"45px"} color={"#FA2622"} > R$ {(post.earnings*brl).toFixed(2)}</Text>
+                   <Text marginBottom={"20px"} color={"black"} > R$ {(post.earnings*brl).toFixed(2)}</Text>
                     <img
                       src="../../../../assets/somaskate2.ico"
                       alt="spinning stoken coin"
                       style={{
-                        width: "30px", 
-                        height: "70px", 
-                        marginLeft: "10px",
-                        marginRight: "12px",
-                        marginBottom: "-10px",
+                        width: "50px", 
+                        height: "65px", 
+                        marginLeft: "50px",
+                        marginRight: "01px",
+                        marginBottom: "-14px",
                       }}
                     />
                   </Button>
@@ -708,7 +708,7 @@ flex="1"
 
                 <IconButton
                     icon={<MdArrowUpward />}
-                    backgroundColor="black"
+                    backgroundColor="white"
                     color="blue"
               variant="ghost"
                     size="xs"

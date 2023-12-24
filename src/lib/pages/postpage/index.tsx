@@ -215,6 +215,7 @@ const PostPage: React.FC = () => {
             author={URLAuthor}
             permlink={URLPermlink}
             weight={sliderValue}
+            userVote={''}
           />
           <center>
             <h1 style={commentTitleStyle}>Comente algo sobre o post...</h1>

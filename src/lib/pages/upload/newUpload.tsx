@@ -199,9 +199,13 @@ const NewUpload: React.FC = () => {
       multiple: false,
     });
 
+    
   const { getRootProps: getVideosRootProps, getInputProps: getVideosInputProps } =
     useDropzone({
-      onDrop: onDropVideos,
+      
+
+      
+   
       //@ts-ignore
       accept: "video/mp4",
       multiple: false,
