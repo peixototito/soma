@@ -512,10 +512,10 @@ const getVotedHoverProperties = (post: any) => {
 
   // If the post has not been voted on, return normal hover properties
   return {
-    backgroundColor: 'mediumspringgreen', // Change the color on hover
+    backgroundColor: 'white', // Change the color on hover
     color: 'mediumvioletred', // Change the text color on hover
     boxShadow: '0 0 8px darkgoldenrod, 0 0 8px darkgoldenrod, 0 0 8px darkgoldenrod', // Add an underglow effect
-    border: "2px solid darkgreen" 
+    border: "2px solid black" 
   };
 }
 
