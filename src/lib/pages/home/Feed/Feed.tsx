@@ -686,15 +686,15 @@ flex="1"
                           backgroundColor: 'transparent', // Cor de fundo ao passar o mouse
                   }} //dynamically changes font size based on numerical value of post.earnings
                   >
-                   <Text marginBottom={"20px"} color={"black"} > R$ {(post.earnings*brl).toFixed(2)}</Text>
+                   <Text marginBottom={"10px"} color={"black"} > R$ {(post.earnings*brl).toFixed(2)}</Text>
                     <img
                       src="../../../../assets/somaskate2.ico"
                       alt="spinning stoken coin"
                       style={{
                         width: "50px", 
                         height: "65px", 
-                        marginLeft: "50px",
-                        marginRight: "01px",
+                        marginLeft: "75px",
+                        marginRight: "-4px",
                         marginBottom: "-14px",
                       }}
                     />
@@ -715,7 +715,7 @@ flex="1"
                     borderRadius="50%"
                     aria-label="Upvote"
                     border="1px"
-                    borderColor="red"
+                    borderColor="black"
                     onClick={(e) => {
                       e.stopPropagation(); // Prevent the click event from propagating
                       handleVoteClick(post);
