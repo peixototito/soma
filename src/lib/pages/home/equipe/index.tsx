@@ -12,24 +12,24 @@ interface Card {
 const cardData: Card[] = [
   {
     imageUrl: '../../../../assets/leofoto.jpg',
-    hoverImageUrl: '', // Specify hover image URL
+    hoverImageUrl: '../../../../assets/leo.gif', 
     subtitle: 'XVLAD',
     url: ''
     },
     {
     imageUrl: '../../../../assets/arthurcampos.jpg',
-    hoverImageUrl: '',
+    hoverImageUrl: '../../../../assets/campos.gif',
     subtitle: 'ARTHUR CAMPOS',
     },
 
   {
     imageUrl: '../../../../assets/miguelzinho.jpg',
-    hoverImageUrl: '',
+    hoverImageUrl: '../../../../assets/miguelzinho.gif',
     subtitle: 'Miguelzinho',
   },
   {
     imageUrl: '../../../../assets/pujol.jpg',
-    hoverImageUrl: '',
+    hoverImageUrl: '../../../../assets/pujol.gif',
     subtitle: 'PUJOLEDUARDO',
   },
  
