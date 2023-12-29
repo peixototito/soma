@@ -11,7 +11,7 @@ interface Card {
 
 const cardData: Card[] = [
   {
-    imageUrl: '../../../../assets/leoxvlad.jpeg',
+    imageUrl: '../../../../assets/leofoto.jpg',
     hoverImageUrl: '', // Specify hover image URL
     subtitle: 'XVLAD',
     url: ''
