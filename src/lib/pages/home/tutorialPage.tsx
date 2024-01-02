@@ -216,11 +216,11 @@ const MobileTutorial: React.FC = () => {
             color="white"
             fontSize="lg"
             fontWeight="bold"
-            border="1px solid limegreen"
+            border="1px solid black"
             padding="20px"
             borderWidth="2px"
             _hover={{
-              bg: "limegreen",
+              bg: "black",
               transform: "translateY(-2px)",
               boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)"
             }}

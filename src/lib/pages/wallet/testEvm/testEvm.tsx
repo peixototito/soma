@@ -70,7 +70,7 @@ const TestEvm = () => {
           <Flex
             key={index}
             borderWidth="1px"
-            borderColor="limegreen"
+            borderColor="black"
             width="100%"
             alignItems="center"
             padding="10px"

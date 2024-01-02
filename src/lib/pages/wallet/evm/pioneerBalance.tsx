@@ -182,7 +182,7 @@ const PortfolioPage: React.FC<PortfolioPageProps> = ({ wallet_address }) => {
               <Text color="#FFFFFF" fontSize="18px" fontWeight="bold">
                 ETH Balance
               </Text>
-              <Tooltip border={"1px dashed limegreen"} bg={"#002240"} fontSize={"22px"} label={ethBalanceInUsd?.toFixed(2) + " USD"}>
+              <Tooltip border={"1px dashed black"} bg={"#002240"} fontSize={"22px"} label={ethBalanceInUsd?.toFixed(2) + " USD"}>
 
               <Text color="#FFA500" fontSize="18px" marginLeft="5px">
                 {ethBalance?.toFixed(5)} ETH

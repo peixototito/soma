@@ -372,7 +372,7 @@ export default function QFS() {
             src={`https://images.hive.blog/u/${user.username}/avatar`}
             alt="profile avatar"
             borderRadius="10px"
-            border="2px solid blue"
+            border="2px solid black"
             boxSize="35px"
           />
         </Td>
@@ -410,7 +410,7 @@ export default function QFS() {
   variant="striped"
   bg="black" // Set background color for the entire table
   width="100%"
-  border="1px solid green" // Add a border to the table
+  border="1px solid black" // Add a border to the table
   borderRadius="10px"
 >
   <Thead>
@@ -432,7 +432,7 @@ export default function QFS() {
             src={`https://images.hive.blog/u/${user.username}/avatar`}
             alt="profile avatar"
             borderRadius="10px"
-            border="2px solid limegreen"
+            border="2px solid black"
             boxSize="35px"
           />
         </Td>

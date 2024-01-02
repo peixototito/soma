@@ -61,7 +61,7 @@ export function SkateboardLoading({ progress }: any) {
           top="0"
           bottom="0"
           width={`${progress}%`}
-          background="limegreen"
+          background="black"
           borderRadius="4px"
           boxShadow="0 2px 4px rgba(0,0,0,0.1)"
         />
@@ -72,7 +72,7 @@ export function SkateboardLoading({ progress }: any) {
           height="8px"
           width="100%"
           bottom="0px"
-          background="limegreen"
+          background="black"
           borderRadius="4px"
         />
         <Box
@@ -92,7 +92,7 @@ export function SkateboardLoading({ progress }: any) {
           left={`${progress - 2}%`}
           bottom="0px"
           fontSize="sm"
-          color="limegreen"
+          color="black"
           transform="translateX(-50%)"
         >
           _____✨

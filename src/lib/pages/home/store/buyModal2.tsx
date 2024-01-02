@@ -182,7 +182,7 @@ const BuyModal: React.FC<BuyModalProps> = ({
     <Modal isOpen={showModal} onClose={() => setShowModal(false)} size="md">
       <ModalOverlay opacity={0.2}/>
       <ModalContent bg="white" border="3px solid black">
-        <ModalHeader color="blue" margin={"auto"}>{buyingIndex !== null ? cardData[buyingIndex].subtitle : ""}</ModalHeader>
+        <ModalHeader color="black" margin={"auto"}>{buyingIndex !== null ? cardData[buyingIndex].subtitle : ""}</ModalHeader>
         <ModalCloseButton />
         <ModalBody>
           <Box border="3px solid black" padding="10px">

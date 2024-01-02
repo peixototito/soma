@@ -593,7 +593,7 @@ flex="1"
               <CardBody>
                 
                 <Box //the box around the blogpost title
-                  //border="1px solid limegreen"
+                  //border="1px solid black"
                   borderRadius="0px"
                   minWidth="100%"
                   minHeight="100%"

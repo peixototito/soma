@@ -295,7 +295,7 @@ const GridItem: React.FC<GridItemProps> = ({ position, image, onDrop }) => {
       display="flex"
       alignItems="center"
       justifyContent="center"
-    //   border="1px solid limegreen"
+    //   border="1px solid black"
     >
       {typedImage ? (
         <DroppedImage id={typedImage.id} src={typedImage.src} />

@@ -198,7 +198,7 @@ const HiveStats: React.FC<HiveStatsProps> = ({ wallet }) => {
                             bg="black" 
                             color="white" 
                             borderRadius="10px" 
-                            border="1px dashed limegreen" 
+                            border="1px dashed black" 
                             label="A curation trail on Hive is like a way to automatically follow the voting choices of a trusted user. When they upvote content, your account does too, and you both earn rewards. It's akin to having a content curator or guide who selects valuable posts, and you get to benefit from their expertise without actively searching for content to upvote. You can adjust how closely you follow their votes, giving you some control over your engagement. You can follow our curation trail clicking in this link.">
                         <HStack
                             margin="10px"
@@ -251,7 +251,7 @@ export const BalanceDisplay = ({
       textAlign="center"
     >
       {labelTooltip ? (
-        <Tooltip label={labelTooltip} bg="black" color="white" borderRadius="10px" border="1px dashed limegreen">
+        <Tooltip label={labelTooltip} bg="black" color="white" borderRadius="10px" border="1px dashed black">
           {labelLink ? (
             <ChakraLink color="white" fontWeight="bold"  href={labelLink} isExternal style={labelStyle}>
               {label}

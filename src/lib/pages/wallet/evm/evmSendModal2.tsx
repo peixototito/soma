@@ -118,7 +118,7 @@ const EvmSendModal2: React.FC<EvmSendModalProps> = ({ isOpen, onClose, tokenInfo
                   onChange={(e) => setToAddress(e.target.value)}
                 />
               </FormControl>
-              <Button colorScheme="green">
+              <Button colorScheme="black">
                 Send
               </Button>
             </VStack>

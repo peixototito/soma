@@ -71,7 +71,7 @@ const AuthorSearchBar: React.FC<AuthorSearchBarProps> = ({ onSearch }) => {
               cursor="pointer"
               display="flex"
               backgroundColor={"black"}
-              border="1px limegreen solid"
+              border="1px black solid"
               alignItems="center"
               _hover={{ bg: "gray.100" }}
             >
