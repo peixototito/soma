@@ -2,6 +2,11 @@ import React from 'react';
 import { Flex, Box, Grid, Image, Text, VStack, Link as ChakraLink } from '@chakra-ui/react';
 import { Link as RouterLink } from 'react-router-dom';
 import { useState } from 'react';
+import '@fontsource-variable/roboto-mono';
+import '@fontsource/satisfy';
+import '@fontsource-variable/comfortaa';
+
+
 interface Card {
   imageUrl: string;
   subtitle: string;

@@ -65,7 +65,7 @@ const PlaceholderLoadingBar = () => {
 
   return (
     <center onLoad={() => {}}>
-      <Image src="/assets/somaskate.gif" width="250px" />
+      <Image src="/assets/somas.gif" width="450px" />
       <Text>{randomSentence}</Text>
     </center>
   );
@@ -709,7 +709,7 @@ flex="1"
                 <IconButton
                     icon={<MdArrowUpward />}
                     backgroundColor="white"
-                    color="blue"
+                    color="black"
               variant="ghost"
                     size="xs"
                     borderRadius="50%"
